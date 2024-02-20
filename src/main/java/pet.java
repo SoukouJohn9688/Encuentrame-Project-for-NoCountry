@@ -33,6 +33,7 @@ public class pet {
 
     private String descripcion;
     private Integer id_cuidador;
+    private boolean adoptado;
 
 
 
