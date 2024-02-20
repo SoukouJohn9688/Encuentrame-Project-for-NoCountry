@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="icon" id="logo" type="image/png" href="imagenes/icono.png">
+
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  
+
+        <!-- para los logos de redes sociales -->
+        <script src="https://kit.fontawesome.com/2296f7e3a6.js" crossorigin="anonymous"></script> 
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <title>Mascota</title>
+
+        <link rel="stylesheet" href="css/header.css">
+        <link rel="stylesheet" href="css/footer.css"> 
+        <link rel="stylesheet" href="css/descripcion.css">
+
+        
+
+
+</head>
+
+<body>
+
+        
+        
+            <!-- La barra de navegación, con el logo, adopciones,refugios,etc -->
+            <nav class="header" >
+                
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="imagenes/logo1.png" alt="Logo Patitas">
+                    </a>    
+                </div>
+                
+                <ul class="nav-list">
+
+                    <li><a href="adopciones.html">Adopciones</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="refugios.html">Refugios</a></li>
+                    <li><a href="adopcionespeciales.html">Adopción Especial</a></li>
+                    <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
+                    
+                    <div class="botones-container">
+                        <a class="ingresarheader" href="ingresar.html" >Ingresar</a>
+                        <a class="registrarseheader" href="registrarse.html" >Registrarse</a> 
+                    </div>
+
+                </ul>
+                
+            </nav>
+
+        <section>    
+            <div id="carrusel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="col-md-6">
+                                <a href="mascota.html">
+                                <img src="img/descripcion1.jpg" class="d-block w-100" alt="imagen1">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="col-md-6">
+                                <a href="#">
+                                    <img src="img/descripcion2.jpg" class="img-fluid" alt="imagen 2">
+                                </a> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <div class="col-md-6">
+                                <a href="mascota.html">
+                                <img src="img/descripcion3.jpg" class="d-block w-100" alt="imagen3">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carrusel" data-bs-slide="prev">
+                    <i class="fa-solid fa-arrow-left fa-beat fa-2xs" style="color: #ff5733;"></i>  
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carrusel" data-bs-slide="next">
+                    <i class="fa-solid fa-arrow-right fa-beat fa-2xs" style="color: #ff5733"></i>
+                </button>
+            </div>
+
+            <div class="descripción">
+                <article>
+                    <h2>RODOLFO</h2>
+                    <h3>Edad: 1 año, Tamaño: Grande, Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium error ipsum, placeat nam vero a porro odit sit alias nesciunt tenetur necessitatibus deserunt sunt temporibus in magnam consequatur sint molestiae!</h3>
+                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorum voluptas quo commodi, distinctio minima. Voluptas libero quo ratione quia esse consequuntur aspernatur, beatae, inventore minus, recusandae omnis dolore tempora.</h5>
+                </article>
+                <div class="contactar">
+                    <div class="contactar">
+                        <button type="button" id="botonContactar">Contactar para adopción</button>
+            
+                      
+                      <script>
+                        // Obtén una referencia al botón
+                        var boton = document.getElementById("botonContactar");
+                      
+                        // Agrega un evento click al botón que redirigirá a la URL de WhatsApp cuando se haga clic
+                        boton.addEventListener("click", function() {
+                          window.location.href = "https://wa.me/543425151123";
+                        });
+                      </script>
+                    
+                </div>
+            </div>
+            
+
+            
+        </section>
+        
+        <footer>
+            <div class="footer">
+                <div class="container">
+                    <div class="logo-container-footer">
+                        <img src="img/logo1.png" alt="logo patitas">
+                    </div>  
+                    <div class="derechos">
+                        <p >&copy; ENCUENTRAME - Todos los derechos reservados</p>
+                    </div>
+                    <div class="contact-container">
+                        <h4>Contacto</h4>
+                        <p>Correo: nocountry@gmail.com</p>
+                        <p>Teléfono: (342) 155119142 </p>
+                    </div>
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-instagram fa-flip fa-2xl"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-x-twitter fa-flip fa-2xl"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-facebook fa-flip fa-2xl"></i></a></li>
+                        </ul>
+                    </div>       
+                </div>
+            </div> 
+        </footer>
+        
+        <script src="js/descripcion.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+::-webkit-scrollbar {
+    background-color: #97add3;
+}
+  
+::-webkit-scrollbar-thumb {
+    background-color: #215c24;
+}
+
+html{
+    scroll-behavior: smooth;
+}   
+
+body{
+    background-image: url(/img/logo1.png); 
+    background-size:50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 16% ;
+    background-attachment:local;
+    background-color: #9bb6e3;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+    
+h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 130px;
+    color: #089c10;
+    position: relative;
+}
+
+/*la organizacion vence al tiempo*/
+.lema{
+    opacity: 0;
+    transition: opacity 5s;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 60px;
+}
+
+.mostrar-lema{
+    opacity: 1;
+}
+ 
+.about-us{
+    margin-top: 600px;
+    padding: 40px;
+    text-align: center;
+}
+
+.about-content{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* h2: quienes somos, p: texto*/
+.about-content h3, .about-content p{
+    color: #21295c;
+}
+
+/*haznos una pregunta*/
+h3{
+    color: #013071;
+    font-family: sans-serif;
+    font-size: 90px;
+    font-style: bold;
+    float: left;
+    width: 50%;
+    margin-left: 85px;
+    margin-bottom: 10px;
+    margin-top: 90px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    width: 40%;
+    height: 500px;
+    background-color: #7f97c0;
+    border-radius: 5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+fieldset{
+    border:0;
+    padding: 0;
+    margin: 0;
+}
+
+input,textarea{
+    font-family: sans-serif;
+    font-size: 1em;
+    color: #59429d;
+    border-radius: 5px;
+    
+}
+
+.campo{
+    margin-bottom: 1px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.campo label{
+    font-family: sans-serif;
+    width: 200px;
+    margin-bottom: 0.1em;
+    color: #59429d;
+    display: block;
+    text-align: center;
+    align-items: center;
+}
+
+
+.campo input[type="text"], .campo input[type="mail"], .campo textarea{
+    align-items: auto;
+    padding: 0.1em;
+    border: 1px solid #59429d;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    
+} 
+.campo input[type="text"], .campo input[type="mail"]{
+    height: 30px;
+    width: 400px;
+}
+
+.campo input:focus, .campo textarea:focus{
+    background: #e0e0f8;
+}
+
+textarea{
+    height: 100px;
+    padding: 0.3em;
+    border: 1px solid #59429d;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    width: 30em;
+    resize: none;
+}
+
+button{
+    text-align: center;
+    width: 200px;
+    font-family: sans-serif;
+    font-size: 1em;
+    color: #59429d;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+/*DISEÑO WEB ADAPTABLE*/
+
+@media screen and (max-width: 1314px){
+    .campo input[type="text"], .campo input[type="mail"]{
+        height: 22px;
+        width: 250px;
+    }
+
+    textarea{
+        height: 80px;
+        width: 20em;
+    }
+
+    form{
+        width: 40%;
+        background-color: #7f97c0;
+        border-radius: 5px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    h3{
+        font-size: 80px;
+        margin-left: 75px;
+        margin-top: 100px;
+    }
+    
+}
+
+@media screen and (min-width: 1700px) and (max-width: 1920px) {
+    .about-us{
+        margin-top: 700px;
+        padding: 60px;
+        text-align: center;
+    }
+}
+
+

@@ -1,0 +1,116 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" id="logo" type="image/png" href="imagenes/logo1.png">
+
+       
+
+        <!-- para los logos de redes sociales -->
+        <script src="https://kit.fontawesome.com/2296f7e3a6.js" crossorigin="anonymous"></script>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+        <title>Sobre Nosotros</title>
+        
+        <link rel="stylesheet" href="css/header.css"> 
+        <link rel="stylesheet" href="css/footer.css">
+        <link rel="stylesheet" href="css/sobrenosotros.css"> 
+
+        
+
+    </head>
+    <body>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+        <nav class="header">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="imagenes/logo1.png" alt="Logo Patitas">
+                </a>    
+            </div>   
+            
+            <ul class="nav-list">
+                <li><a href="adopciones.html">Adopciones</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="refugios.html">Refugios</a></li>
+                <li><a href="adopcionespeciales.html">Adopción Especial</a></li>
+                <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
+                
+                <div class="botones-container">
+                    <a class="ingresarheader" href="ingresar.html" >Ingresar</a>
+                    <a class="registrarseheader" href="registrarse.html" >Registrarse</a> 
+                </div>
+                
+            </ul>
+        </nav>
+
+        <h1 class="lema" id="lema">Encuentrame - No Country</h1>
+        <section class="about-us">
+            <div class="about-content">
+                <h2>Quienes Somos</h2>
+                <p>Somos un equipo de desarrolladores que aceptaron un reto en NoCountry! Decidimos realizar este proyecto gracias a la demanda de mascotas en situacion de calle!.</p>
+            </div>
+        </section>
+
+        <h3>HAZNOS<br> UNA<br> PREGUNTA</h3>
+
+        <form>
+            <fieldset class="group">
+                <div class="campo">
+                    <label for="nombre"><strong>Nombre</strong></label>
+                    <input type="text" name="nombre" id="nombre" required>
+                </div>
+
+                <div class="campo">
+                    <label for="apellido"><strong>Apellido</strong></label>
+                    <input type="text" name="apellido" id="apellido" required>
+                </div>
+            </fieldset>
+
+            <div class="campo">
+                <label for="mail"><strong>Mail</strong></label>
+                <input type="mail" name="mail" id="mail" required>
+            </div>
+
+            <div class="campo">
+                <label for="comentario"><strong>Deja aquí tu comentario</strong></label>
+                <textarea rows="6"  id="comentario" required></textarea>
+            </div>
+
+            <button class="boton" type="submit" onsubmit="">Enviar</button>
+        </form>
+
+        <footer>
+            <div class="footer">
+                <div class="container">
+                    <div class="logo-container-footer">
+                        <img src="img/logo1.png" alt="logo patitas">
+                    </div>  
+                    <div class="derechos">
+                        <p >&copy; 2023 Patitas En Espera - Todos los derechos reservados</p>
+                    </div>
+                    <div class="contact-container">
+                        <h4>Contacto</h4>
+                        <p>Correo: patitasenespera@gmail.com</p>
+                        <p>Teléfono: (342) 532-1534 </p>
+                    </div>
+                    <div class="social-icons">
+                        <ul>
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-instagram fa-flip fa-2xl"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-x-twitter fa-flip fa-2xl"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-facebook fa-flip fa-2xl"></i></a></li>
+                        </ul>
+                    </div>       
+                </div>
+            </div> 
+        </footer>
+
+
+        <script src="js/sobrenosotros.js"></script>
+    </body>
+    </html>
