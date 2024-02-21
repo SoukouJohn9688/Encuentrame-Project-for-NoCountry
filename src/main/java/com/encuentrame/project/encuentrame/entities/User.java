@@ -1,8 +1,6 @@
 package com.encuentrame.project.encuentrame.entities;
 
-<<<<<<< HEAD
 
-=======
 import java.time.LocalDate;
 
 import com.encuentrame.project.encuentrame.enumerations.UserRole;
@@ -23,7 +21,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "users")
->>>>>>> origin/dev-mc
+
 public class User {
 
     @Id
