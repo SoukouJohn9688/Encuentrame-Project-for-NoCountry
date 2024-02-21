@@ -1,8 +1,8 @@
 package com.encuentrame.project.encuentrame.entities;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.encuentrame.project.encuentrame.enumerations.Size;
+import com.encuentrame.project.encuentrame.enumerations.Species;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,24 +17,23 @@ public class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private enum especie{
-        perro,
-        gato
+    @Enumerated(EnumType.STRING)
+    private Species specie;
 
-    };
-
-    private String raza;
-    private  Integer edad_meses;
+    @NotBlank(message = "The breed cannot be blank.")
+    private String breed;
+    @NotBlank(message = "The age cannot be blank.")
+    private  Integer age_months;
     private String color;
-    private enum tamaño{
-        chico,
-        mediano,
-        grande
-    }
+    @Enumerated(EnumType.STRING)
+    private Size size;
 
-    private String descripcion;
-    private Integer id_cuidador;
-    private boolean adoptado;
+    @NotBlank(message = "The description cannot be blank.")
+    private String description;
+    @NotBlank(message = "The care-giver Id cannot be blank.")
+    private Integer id_care_giver;
+    @NotBlank(message = "The adoption state cannot be blank.")
+    private boolean adopted;
 
 
 
