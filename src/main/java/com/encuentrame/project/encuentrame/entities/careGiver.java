@@ -1,4 +1,4 @@
-package com.encuentrame.project.encuentrame.entity;
+package com.encuentrame.project.encuentrame.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

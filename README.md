@@ -1,4 +1,16 @@
 # c16-53-t-java
+
 Proyecto Encuéntrame
 
-//Nota personal matias. Cambie la version de java de 21 a 17 para mi desarrollo personal, me da errores intentar compilar asi, probablemente antes de iniciar
+Java version : 17 
+
+# Setup
+
+To connect to the database you must define the following environment variables with your database username and password respectively:
+
+```
+MYSQL_DB_USERNAME
+MYSQL_DB_PASSWORD
+```
+
+
