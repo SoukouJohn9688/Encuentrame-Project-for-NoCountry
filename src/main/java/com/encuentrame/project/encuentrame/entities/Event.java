@@ -21,7 +21,7 @@ import lombok.NoArgsConstructor;
 public class Event {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDTENITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String content;

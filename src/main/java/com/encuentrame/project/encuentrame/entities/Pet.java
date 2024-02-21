@@ -3,6 +3,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +18,7 @@ public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private enum especie{
         perro,
         gato
@@ -33,8 +35,10 @@ public class Pet {
     }
 
     private String descripcion;
-    private Integer id_cuidador;
-    private boolean adoptado;
+    @ManyToOne
+    @JoinColumn(name = "id_careGiver", nullable = false)
+    private CareGiver careGiver;
+        private boolean adoptado;
 
 
 
