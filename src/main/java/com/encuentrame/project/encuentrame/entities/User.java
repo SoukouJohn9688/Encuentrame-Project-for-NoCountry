@@ -1,5 +1,6 @@
 package com.encuentrame.project.encuentrame.entities;
 
+
 public class User {
 
     int id;
