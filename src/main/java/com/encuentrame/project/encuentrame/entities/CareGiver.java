@@ -8,7 +8,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 
 @Entity
-public class careGiver {
+public class CareGiver {
 
     @Id
     @GeneratedValue(generator = "uuid")
@@ -17,16 +17,20 @@ public class careGiver {
 
     @NotBlank(message = "The name must not be blank")
     private String name;
+    @NotBlank(message = "The surname must not be blank")
     private String surname;
+    @NotBlank(message = "The email must not be blank")
     private String email;
+    @NotBlank(message = "The phone must not be blank")
     private Long phone;
+
     private String city;
     private String adress;
 
-    public careGiver(){
+    public CareGiver(){
     }
 
-    public careGiver(String id, String name, String surname, String email, Long phone, String city, String adress) {
+    public CareGiver(String id, String name, String surname, String email, Long phone, String city, String adress) {
         this.id = id;
         this.name = name;
         this.surname = surname;
