@@ -21,18 +21,16 @@ import lombok.NoArgsConstructor;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @NotBlank(message = "The title cannot be blank.")
     private String title;
     @NotBlank(message = "The content cannot be blank.")
     private String content;
-    @NotBlank(message = "The admin Id cannot be blank.")
-    private Integer id_admin;
 
 
-    private String titulo;
-    private String contenido;
+
+
     @ManyToOne
     @JoinColumn(name = "id_admin", nullable = false)
     private User user;
