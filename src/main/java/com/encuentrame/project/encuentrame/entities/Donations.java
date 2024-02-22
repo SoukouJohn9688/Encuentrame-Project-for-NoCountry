@@ -1,5 +1,6 @@
 package com.encuentrame.project.encuentrame.entities;
 
+import com.encuentrame.project.encuentrame.enumerations.PaymentMethod;
 import jakarta.persistence.*;
 import java.util.Date;
 import java.math.BigDecimal;
@@ -21,7 +22,7 @@ public class Donations {
     private String emailDonante;
     @Enumerated(EnumType.STRING)
     @Column(name = "medio_pago")
-    private MedioPago medioPago;
+    private PaymentMethod medioPago;
     @Column(name = "monto")
     private BigDecimal monto;
     @Column(name = "fecha_hora", columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
@@ -30,9 +31,5 @@ public class Donations {
     public Donations() {
     }
 
-    enum MedioPago {
-        Credito,
-        Debito,
-        Transferencia
-    }
+
 }

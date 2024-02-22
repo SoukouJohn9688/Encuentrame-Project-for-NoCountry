@@ -1,10 +1,11 @@
 package com.encuentrame.project.encuentrame.entities;
 
+import com.encuentrame.project.encuentrame.enumerations.EventResponse;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "events")
-public class RespuestaEvento {
+public class RequestEvent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,12 +21,7 @@ public class RespuestaEvento {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "respuesta")
-    private RespuestaEnum respuesta;
+    private EventResponse respuesta;
 
 }
 
-enum RespuestaEnum {
-    Interesado,
-    NoInteresado,
-    NoSeguro
-}
