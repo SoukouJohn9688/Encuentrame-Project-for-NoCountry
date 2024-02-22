@@ -3,6 +3,7 @@ package com.encuentrame.project.encuentrame.entities;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "events")
 public class RespuestaEvento {
 
     @Id
@@ -11,16 +12,15 @@ public class RespuestaEvento {
 
     @ManyToOne
     @JoinColumn(name = "id_evento" , referencedColumnName = "id" , foreignKey = @ForeignKey(name = "FK_respuesta_evento_evento"))
-    private Evento evento;
+    private Event evento;
 
     @ManyToOne
     @JoinColumn(name = "id_usuario" , referencedColumnName = "id" , foreignKey = @ForeignKey(name = "FK_respuesta_evento_usuario"))
-    private Usuario usuario;
+    private User user;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "respuesta")
     private RespuestaEnum respuesta;
-
 
 }
 

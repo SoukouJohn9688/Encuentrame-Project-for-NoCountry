@@ -5,10 +5,10 @@ import java.util.Date;
 import java.math.BigDecimal;
 
 
-@Entity //declaramos que esta clase es una entidad
+@Entity
 @Table(name = "donaciones_historico")
 
-public class Donaciones {
+public class Donations {
 
 
     @Id
@@ -27,7 +27,7 @@ public class Donaciones {
     @Column(name = "fecha_hora", columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
     private Date fechaHora;
 
-    public Donaciones() {
+    public Donations() {
     }
 
     enum MedioPago {
