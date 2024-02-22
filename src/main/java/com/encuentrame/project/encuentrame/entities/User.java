@@ -1,14 +1,13 @@
 package com.encuentrame.project.encuentrame.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import com.encuentrame.project.encuentrame.enumerations.UserRole;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.UuidGenerator;
+import jakarta.validation.constraints.NotBlank;
 
+import java.time.LocalDate;
 import java.util.Set;
 import java.util.UUID;
 
@@ -27,9 +26,16 @@ public class User {
     @OneToMany(mappedBy = "user")
     private Set<Article> articles;
 
-
-    private String first_name;
-    private String last_name;
+    @NotBlank(message = "The name cannot be blank.")
+    private String name;
+    @NotBlank(message = "The surname cannot be blank.")
+    private String surname;
+    @NotBlank(message = "The email cannot be blank.")
     private String email;
+    @NotBlank(message = "The password cannot be blank.")
     private String password;
+    @NotBlank(message = "The birthdate cannot be blank.")
+    private LocalDate birthdate;
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 }
