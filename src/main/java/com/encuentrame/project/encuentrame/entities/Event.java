@@ -32,7 +32,7 @@ public class Event {
     private LocalDateTime date_time;
     @NotBlank(message = "The city cannot be blank.")
     private String city;
-    @NotBlank(message = "The address Id cannot be blank.")
+    @NotBlank(message = "The address cannot be blank.")
     private String address;
     @ManyToOne
     @JoinColumn(name = "user_id")
