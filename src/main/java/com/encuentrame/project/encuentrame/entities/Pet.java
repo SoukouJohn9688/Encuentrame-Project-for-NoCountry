@@ -6,8 +6,10 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -17,12 +19,16 @@ public class Pet {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @UuidGenerator
     @Column(name = "pet_id")
-    private Integer petID;
+    private UUID pet_id;
 
     @OneToMany(mappedBy = "pet")
     private Set<RequestAdoption> requestAdoptionSet;
+
+    @ManyToOne()
+    @JoinColumn(name = "care_giver_id")
+    private CareGiver care_giver;
 
     @Enumerated(EnumType.STRING)
     private Species specie;
@@ -37,11 +43,8 @@ public class Pet {
 
     @NotBlank(message = "The description cannot be blank.")
     private String description;
-    @NotBlank(message = "The care-giver Id cannot be blank.")
-    private Integer id_care_giver;
+
     @NotBlank(message = "The adoption state cannot be blank.")
     private boolean adopted;
-
-
 
 }

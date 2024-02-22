@@ -7,8 +7,10 @@ import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -17,7 +19,7 @@ import java.util.Set;
 public class User {
     @Id
     @Column(name = "user_id")
-    int userID;
+    private UUID user_id;
 
     @OneToMany(mappedBy = "user")
     private Set<RequestAdoption> requestAdoptions;
