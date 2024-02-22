@@ -1,36 +1,46 @@
 package com.encuentrame.project.encuentrame.entities;
 
-import java.time.LocalDate;
-
-import com.encuentrame.project.encuentrame.enumerations.UserRole;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.util.Set;
+
+import com.encuentrame.project.encuentrame.enumerations.UserRole;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String first_name;
-    private String last_name;
+    Integer id;
+
+    @OneToMany(mappedBy = "user")
+    private Set<RequestAdoption> requestAdoptions;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Article> articles;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Event> events;
+
+    private String name;
+    private String surname;
     private String email;
     private String password;
     private LocalDate birthdate;
-    
     @Enumerated(EnumType.STRING)
     private UserRole role;
 }
