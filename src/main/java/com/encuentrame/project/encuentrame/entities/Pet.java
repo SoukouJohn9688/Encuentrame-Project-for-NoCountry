@@ -43,7 +43,6 @@ public class Pet {
 
     @NotBlank(message = "The description cannot be blank.")
     private String description;
-
     @NotBlank(message = "The adoption state cannot be blank.")
     private boolean adopted;
 
