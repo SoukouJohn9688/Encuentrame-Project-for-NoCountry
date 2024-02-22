@@ -2,79 +2,35 @@ package com.encuentrame.project.encuentrame.entities;
 
 import com.encuentrame.project.encuentrame.enumerations.AdoptionStatus;
 import jakarta.persistence.*;
-import org.hibernate.annotations.GenericGenerator;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UuidGenerator;
+
 import java.time.LocalDateTime;
+import java.util.UUID;
 
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class RequestAdoption {
 
     @Id
-    @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid")
-    private String id;
+    @UuidGenerator
+    @Column(name = "adoption_id")
+    private UUID adoptionID;
 
     @ManyToOne
-    //@JoinColumn(name = id_usuario)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne
-    //@JoinColumn(name = id_mascota)
+    @JoinColumn(name = "pet_id")
     private Pet pet;
 
     @Enumerated(EnumType.STRING)
     private AdoptionStatus adoptionStatus;
 
     private LocalDateTime creationDate;
-
-    public RequestAdoption() {
-    }
-
-    public RequestAdoption(String id, User user, Pet pet, AdoptionStatus adoptionStatus, LocalDateTime creationDate) {
-        this.id = id;
-        this.user = user;
-        this.pet = pet;
-        this.adoptionStatus = adoptionStatus;
-        this.creationDate = creationDate;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Pet getPet() {
-        return pet;
-    }
-
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
-    public AdoptionStatus getStatusAdoption() {
-        return adoptionStatus;
-    }
-
-    public void setStatusAdoption(AdoptionStatus adoptionStatus) {
-        this.adoptionStatus = adoptionStatus;
-    }
-
-    public LocalDateTime getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(LocalDateTime creationDate) {
-        this.creationDate = creationDate;
-    }
 }

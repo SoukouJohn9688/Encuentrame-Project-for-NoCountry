@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,7 +18,12 @@ public class Pet {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @Column(name = "pet_id")
+    private Integer petID;
+
+    @OneToMany(mappedBy = "pet")
+    private Set<RequestAdoption> requestAdoptionSet;
+
     @Enumerated(EnumType.STRING)
     private Species specie;
 
