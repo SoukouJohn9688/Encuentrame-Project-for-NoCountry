@@ -1,9 +1,5 @@
 package com.encuentrame.project.encuentrame.entities;
 
-import java.util.UUID;
-
-import org.hibernate.annotations.UuidGenerator;
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -18,12 +14,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 public class Article {
-<<<<<<< HEAD
-    @Id
-    @UuidGenerator
-    private UUID id;
-=======
->>>>>>> 153d658f9e23e02a985dc0bdb9b65b875992b78a
 
     @Id
     @UuidGenerator

@@ -10,13 +10,6 @@ import jakarta.validation.constraints.NotBlank;
 import java.time.LocalDate;
 import java.util.Set;
 import java.util.UUID;
-<<<<<<< HEAD
-
-import org.hibernate.annotations.UuidGenerator;
-
-import com.encuentrame.project.encuentrame.enumerations.UserRole;
-=======
->>>>>>> 153d658f9e23e02a985dc0bdb9b65b875992b78a
 
 @Data
 @NoArgsConstructor
@@ -24,13 +17,8 @@ import com.encuentrame.project.encuentrame.enumerations.UserRole;
 @Entity
 public class User {
     @Id
-<<<<<<< HEAD
-    @UuidGenerator
-    private UUID id;
-=======
     @Column(name = "user_id")
     private UUID user_id;
->>>>>>> 153d658f9e23e02a985dc0bdb9b65b875992b78a
 
     @OneToMany(mappedBy = "user")
     private Set<RequestAdoption> requestAdoptions;

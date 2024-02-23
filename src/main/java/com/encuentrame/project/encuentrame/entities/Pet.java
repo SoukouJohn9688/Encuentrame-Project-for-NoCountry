@@ -10,11 +10,6 @@ import org.hibernate.annotations.UuidGenerator;
 
 import java.util.Set;
 import java.util.UUID;
-<<<<<<< HEAD
-
-import org.hibernate.annotations.UuidGenerator;
-=======
->>>>>>> 153d658f9e23e02a985dc0bdb9b65b875992b78a
 
 @Data
 @NoArgsConstructor
@@ -25,12 +20,8 @@ public class Pet {
 
     @Id
     @UuidGenerator
-<<<<<<< HEAD
-    private UUID id;
-=======
     @Column(name = "pet_id")
     private UUID pet_id;
->>>>>>> 153d658f9e23e02a985dc0bdb9b65b875992b78a
 
     @OneToMany(mappedBy = "pet")
     private Set<RequestAdoption> requestAdoptionSet;
