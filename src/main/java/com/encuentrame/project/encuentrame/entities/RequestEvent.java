@@ -2,9 +2,17 @@ package com.encuentrame.project.encuentrame.entities;
 
 import com.encuentrame.project.encuentrame.enumerations.EventResponse;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
 
 @Entity
-@Table(name = "events")
+@Table(name = "respuesta_evento")
 public class RequestEvent {
 
     @Id

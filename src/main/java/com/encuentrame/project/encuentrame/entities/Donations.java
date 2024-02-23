@@ -2,9 +2,15 @@ package com.encuentrame.project.encuentrame.entities;
 
 import com.encuentrame.project.encuentrame.enumerations.PaymentMethod;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 import java.math.BigDecimal;
 
+@Data
+@AllArgsConstructor
 
 @Entity
 @Table(name = "donaciones_historico")
