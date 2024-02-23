@@ -1,14 +1,15 @@
 USE rescatame;
 show tables;
-select*from request_adoptions;
-INSERT INTO `rescatame`.`users` (`birthdate`, `email`, `first_name`, `last_name`, `password`, `role`) VALUES
+select*from care_giver;
+select*from request_adoption;
+INSERT INTO `rescatame`.`user` (`birthdate`, `email`, `name`, `surname`, `password`, `role`) VALUES
 ('1990-05-15', 'user1@example.com', 'John', 'Doe', 'password1', 'USER'),
 ('1985-09-23', 'user2@example.com', 'Jane', 'Smith', 'password2', 'USER'),
 ('1998-03-07', 'user3@example.com', 'Michael', 'Johnson', 'password3', 'USER'),
 ('1982-12-10', 'user4@example.com', 'Emily', 'Williams', 'password4', 'MODERATOR'),
 ('1995-06-28', 'user5@example.com', 'Daniel', 'Brown', 'password5', 'ADMIN');
 
-INSERT INTO `rescatame`.`article` (`contenido`, `titulo`, `id_admin`) VALUES
+INSERT INTO `rescatame`.`article` (`content`, `title`, `user_id`) VALUES
 ('Contenido del artículo 1', 'Título del artículo 1', 1),
 ('Contenido del artículo 2', 'Título del artículo 2', 2),
 ('Contenido del artículo 3', 'Título del artículo 3', 3),

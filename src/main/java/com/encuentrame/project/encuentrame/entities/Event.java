@@ -1,6 +1,9 @@
 package com.encuentrame.project.encuentrame.entities;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
+
+import org.hibernate.annotations.UuidGenerator;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,8 +25,8 @@ import lombok.NoArgsConstructor;
 public class Event {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @UuidGenerator
+    private UUID id;
     @NotBlank(message = "The title cannot be blank.")
     private String title;
     @NotBlank(message = "The content cannot be blank.")

@@ -8,6 +8,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Set;
+import java.util.UUID;
+
+import org.hibernate.annotations.UuidGenerator;
 
 @Data
 @NoArgsConstructor
@@ -17,9 +20,8 @@ public class Pet {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "pet_id")
-    private Integer petID;
+    @UuidGenerator
+    private UUID id;
 
     @OneToMany(mappedBy = "pet")
     private Set<RequestAdoption> requestAdoptionSet;

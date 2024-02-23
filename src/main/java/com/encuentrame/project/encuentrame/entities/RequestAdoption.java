@@ -17,8 +17,7 @@ import java.util.UUID;
 public class RequestAdoption {
 
     @Id
-    @UuidGenerators
-    @Column(name = "id")
+    @UuidGenerator
     private UUID id;
 
     @ManyToOne

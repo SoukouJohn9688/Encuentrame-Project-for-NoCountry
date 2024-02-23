@@ -15,6 +15,9 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.Set;
+import java.util.UUID;
+
+import org.hibernate.annotations.UuidGenerator;
 
 import com.encuentrame.project.encuentrame.enumerations.UserRole;
 
@@ -25,8 +28,8 @@ import com.encuentrame.project.encuentrame.enumerations.UserRole;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Integer id;
+    @UuidGenerator
+    private UUID id;
 
     @OneToMany(mappedBy = "user")
     private Set<RequestAdoption> requestAdoptions;
