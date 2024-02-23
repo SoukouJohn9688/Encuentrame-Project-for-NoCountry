@@ -18,7 +18,12 @@ public class RequestAdoption {
 
     @Id
     @UuidGenerator
+<<<<<<< HEAD
     private UUID id;
+=======
+    @Column(name = "adoption_id")
+    private UUID adoption_id;
+>>>>>>> 153d658f9e23e02a985dc0bdb9b65b875992b78a
 
     @ManyToOne
     @JoinColumn(name = "user_id")
