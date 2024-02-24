@@ -1,14 +1,13 @@
 package com.encuentrame.project.encuentrame.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
 
+import java.util.Set;
 import java.util.UUID;
 
 
@@ -20,7 +19,11 @@ public class CareGiver {
 
     @Id
     @UuidGenerator
-    private UUID caregiver_id;
+    @Column(name = "care_giver_id")
+    private UUID care_giver_id;
+
+    @OneToMany(mappedBy = "care_giver")
+    private Set<Pet> pets;
 
     @NotBlank(message = "The name must not be blank")
     private String name;
