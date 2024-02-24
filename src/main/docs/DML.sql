@@ -1,17 +1,21 @@
 USE rescatame;
+show tables;
+select*from request_adoptions;
 INSERT INTO `rescatame`.`users` (`birthdate`, `email`, `first_name`, `last_name`, `password`, `role`) VALUES
 ('1990-05-15', 'user1@example.com', 'John', 'Doe', 'password1', 'USER'),
 ('1985-09-23', 'user2@example.com', 'Jane', 'Smith', 'password2', 'USER'),
 ('1998-03-07', 'user3@example.com', 'Michael', 'Johnson', 'password3', 'USER'),
 ('1982-12-10', 'user4@example.com', 'Emily', 'Williams', 'password4', 'MODERATOR'),
-('1995-06-28', 'user5@example.com', 'Daniel', 'Brown', 'password5', 'ADMIN');
+('1995-06-28', 'user5@example.com', 'Daniel', 'Brown', 'password5', 'ADMIN'),
+('1945-06-21', 'user6@example.com', 'Genghis', 'Khan', 'password6', 'ADMIN');
 
 INSERT INTO `rescatame`.`article` (`contenido`, `titulo`, `id_admin`) VALUES
 ('Contenido del artículo 1', 'Título del artículo 1', 1),
 ('Contenido del artículo 2', 'Título del artículo 2', 2),
 ('Contenido del artículo 3', 'Título del artículo 3', 3),
 ('Contenido del artículo 4', 'Título del artículo 4', 4),
-('Contenido del artículo 5', 'Título del artículo 5', 5);
+('Contenido del artículo 5', 'Título del artículo 5', 5),
+('Contenido del artículo 6', 'Título del artículo 6', 6);
 
 INSERT INTO `rescatame`.`care_giver` (`id`, `adress`, `city`, `email`, `name`, `phone`, `surname`) VALUES
 ('CG1', 'Calle A 123', 'Ciudad 1', 'caregiver1@example.com', 'Carlos', 123456789, 'Gómez'),
@@ -40,3 +44,17 @@ INSERT INTO `rescatame`.`request_adoptions` (`adoption_status`, `creation_date`,
 ('WAITING', '2024-02-23 12:30:00', 3, 3),
 ('DENIED', '2024-02-24 13:15:00', 4, 4),
 ('WAITING', '2024-02-25 14:00:00', 5, 5);
+
+INSERT INTO `rescatame`.`donaciones_historico` (`nombre_donante`, `email_donante`, `medio_pago`, `monto`, `fecha_hora`) VALUES
+('Esteban', 'correo1@example.com', 'Credito', 100.00, CURRENT_TIMESTAMP),
+('Marcelo', 'usuario2@hotmail.com', 'Debito', 200.00, CURRENT_TIMESTAMP),
+('Penelope', 'correo_ejemplo3@gmail.com', 'Transferencia', 300.00, CURRENT_TIMESTAMP),
+('Sofia', 'donante4@outlook.com', 'Credito', 400.00, CURRENT_TIMESTAMP),
+('Federico', 'mi_correo5@yahoo.com', 'Debito', 500.00, CURRENT_TIMESTAMP);
+
+INSERT INTO `rescatame`.`respuesta_evento` (`id_evento`, `id_usuario`, `respuesta`) VALUES
+(1, 1, 'Interesado'),
+(2, 2, 'No Interesado'),
+(3, 3, 'No Seguro'),
+(4, 4, 'Interesado'),
+(5, 5, 'No Seguro');

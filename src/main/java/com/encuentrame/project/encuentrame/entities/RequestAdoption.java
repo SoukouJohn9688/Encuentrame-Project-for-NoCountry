@@ -19,7 +19,7 @@ public class RequestAdoption {
     @Id
     @UuidGenerator
     @Column(name = "adoption_id")
-    private UUID adoptionID;
+    private UUID adoption_id;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
