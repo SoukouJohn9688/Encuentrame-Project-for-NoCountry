@@ -19,8 +19,8 @@ public class CareGiver {
 
     @Id
     @UuidGenerator
-    @Column(name = "care_giver")
-    private UUID caregiver_id;
+    @Column(name = "care_giver_id")
+    private UUID care_giver_id;
 
     @OneToMany(mappedBy = "care_giver")
     private Set<Pet> pets;

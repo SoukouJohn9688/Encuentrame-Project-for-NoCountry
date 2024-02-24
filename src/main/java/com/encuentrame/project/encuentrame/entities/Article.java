@@ -17,7 +17,7 @@ public class Article {
 
     @Id
     @UuidGenerator
-    private UUID id;
+    private UUID article_id;
 
     @ManyToOne()
     @JoinColumn(name = "user_id")

@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import jakarta.validation.constraints.NotBlank;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -17,6 +18,7 @@ import java.util.UUID;
 @Entity
 public class User {
     @Id
+    @UuidGenerator
     @Column(name = "user_id")
     private UUID user_id;
 

@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UuidGenerator;
+
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -12,23 +15,24 @@ import lombok.NoArgsConstructor;
 
 
 @Entity
-@Table(name = "respuesta_evento")
+@Table(name = "event_response")
 public class RequestEvent {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @UuidGenerator
+    @Column(name = "request_event_id")
+    private UUID request_event_id;
 
     @ManyToOne
-    @JoinColumn(name = "id_evento" , referencedColumnName = "id" , foreignKey = @ForeignKey(name = "FK_respuesta_evento_evento"))
-    private Event evento;
+    @JoinColumn(name = "event_id" , referencedColumnName = "event_id")
+    private Event event;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario" , referencedColumnName = "id" , foreignKey = @ForeignKey(name = "FK_respuesta_evento_usuario"))
+    @JoinColumn(name = "user_id" , referencedColumnName = "user_id")
     private User user;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "respuesta")
-    private EventResponse respuesta;
+    @Column(name = "response")
+    private EventResponse response;
 
 }

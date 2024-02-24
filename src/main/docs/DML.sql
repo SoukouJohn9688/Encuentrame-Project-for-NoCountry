@@ -6,14 +6,16 @@ INSERT INTO `rescatame`.`users` (`birthdate`, `email`, `first_name`, `last_name`
 ('1985-09-23', 'user2@example.com', 'Jane', 'Smith', 'password2', 'USER'),
 ('1998-03-07', 'user3@example.com', 'Michael', 'Johnson', 'password3', 'USER'),
 ('1982-12-10', 'user4@example.com', 'Emily', 'Williams', 'password4', 'MODERATOR'),
-('1995-06-28', 'user5@example.com', 'Daniel', 'Brown', 'password5', 'ADMIN');
+('1995-06-28', 'user5@example.com', 'Daniel', 'Brown', 'password5', 'ADMIN'),
+('1945-06-21', 'user6@example.com', 'Genghis', 'Khan', 'password6', 'ADMIN');
 
 INSERT INTO `rescatame`.`article` (`contenido`, `titulo`, `id_admin`) VALUES
 ('Contenido del artículo 1', 'Título del artículo 1', 1),
 ('Contenido del artículo 2', 'Título del artículo 2', 2),
 ('Contenido del artículo 3', 'Título del artículo 3', 3),
 ('Contenido del artículo 4', 'Título del artículo 4', 4),
-('Contenido del artículo 5', 'Título del artículo 5', 5);
+('Contenido del artículo 5', 'Título del artículo 5', 5),
+('Contenido del artículo 6', 'Título del artículo 6', 6);
 
 INSERT INTO `rescatame`.`care_giver` (`id`, `adress`, `city`, `email`, `name`, `phone`, `surname`) VALUES
 ('CG1', 'Calle A 123', 'Ciudad 1', 'caregiver1@example.com', 'Carlos', 123456789, 'Gómez'),
