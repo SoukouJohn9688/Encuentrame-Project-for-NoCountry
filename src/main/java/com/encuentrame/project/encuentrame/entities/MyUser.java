@@ -2,9 +2,7 @@ package com.encuentrame.project.encuentrame.entities;
 
 import com.encuentrame.project.encuentrame.enumerations.UserRole;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import jakarta.validation.constraints.NotBlank;
 import org.hibernate.annotations.UuidGenerator;
 
@@ -13,10 +11,13 @@ import java.util.Set;
 import java.util.UUID;
 
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class User {
+
+public class MyUser {
     @Id
     @UuidGenerator
     @Column(name = "user_id")
@@ -40,4 +41,6 @@ public class User {
     private LocalDate birthdate;
     @Enumerated(EnumType.STRING)
     private UserRole role;
+
+
 }
