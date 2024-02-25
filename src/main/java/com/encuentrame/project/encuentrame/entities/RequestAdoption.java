@@ -23,7 +23,7 @@ public class RequestAdoption {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private MyUser myUser;
 
     @ManyToOne
     @JoinColumn(name = "pet_id")

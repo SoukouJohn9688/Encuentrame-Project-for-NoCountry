@@ -34,6 +34,6 @@ public class Event {
     @ManyToOne
     @JoinColumn(name = "user_id")
     @NotBlank(message = "The user_id cannot be blank.")
-    private User user;
+    private MyUser myUser;
     
 }

@@ -32,8 +32,8 @@ import java.math.BigDecimal;
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
 
-        @Column(name = "nombre_donante")
-        private String nombreDonante;
+        @Column(name = "name_donante")
+        private String nameDonante;
         @Column(name = "email_donante")
         private String emailDonante;
         @Enumerated(EnumType.STRING)

@@ -21,7 +21,7 @@ public class Article {
 
     @ManyToOne()
     @JoinColumn(name = "user_id")
-    private User user;
+    private MyUser myUser;
 
     @NotBlank(message = "The title cannot be blank.")
     private String title;

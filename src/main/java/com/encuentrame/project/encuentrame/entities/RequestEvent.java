@@ -29,7 +29,7 @@ public class RequestEvent {
 
     @ManyToOne
     @JoinColumn(name = "user_id" , referencedColumnName = "user_id")
-    private User user;
+    private MyUser myUser;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "response")
