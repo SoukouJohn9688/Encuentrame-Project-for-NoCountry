@@ -34,6 +34,7 @@ public class Event {
     private String city;
     @NotBlank(message = "The address cannot be blank.")
     private String address;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     @NotBlank(message = "The user_id cannot be blank.")

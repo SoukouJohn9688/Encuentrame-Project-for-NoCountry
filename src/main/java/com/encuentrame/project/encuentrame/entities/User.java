@@ -16,7 +16,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @Entity
 public class User {
-    @Id
+     @Id
     @Column(name = "user_id")
     private UUID user_id;
 
