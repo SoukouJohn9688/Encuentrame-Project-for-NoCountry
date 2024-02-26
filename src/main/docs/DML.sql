@@ -1,7 +1,9 @@
 USE rescatame;
 show tables;
 select*from care_giver;
+select*From pet;
 select*from request_adoption;
+select*from article;
 INSERT INTO `rescatame`.`user` (`birthdate`, `email`, `name`, `surname`, `password`, `role`) VALUES
 ('1990-05-15', 'user1@example.com', 'John', 'Doe', 'password1', 'USER'),
 ('1985-09-23', 'user2@example.com', 'Jane', 'Smith', 'password2', 'USER'),
