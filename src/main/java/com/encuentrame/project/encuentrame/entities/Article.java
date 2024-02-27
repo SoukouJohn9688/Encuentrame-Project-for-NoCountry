@@ -27,7 +27,5 @@ public class Article {
     private String title;
     @NotBlank(message = "The content cannot be blank.")
     private String content;
-    @NotBlank(message = "The admin Id cannot be blank.")
-    private Integer id_admin;
 
 }

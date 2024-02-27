@@ -19,12 +19,12 @@ public class CareGiverServiceImpl implements CareGiverService {
     } 
   
     @Override
-    public Optional<CareGiver> getGeekById(UUID id) { 
+    public Optional<CareGiver> getCareGiverById(UUID id) { 
         return careGiverRepository.findById(id); 
     } 
   
     @Override
-    public List<CareGiver> getAllGeeks() {
+    public List<CareGiver> getAllCareGivers() {
         return careGiverRepository.findAll(); 
     }
 

@@ -7,9 +7,9 @@ import java.util.UUID;
 import com.encuentrame.project.encuentrame.entities.CareGiver;
 
 public interface CareGiverService {
-    List<CareGiver> getAllGeeks(); 
+    List<CareGiver> getAllCareGivers(); 
   
-    Optional<CareGiver> getGeekById(UUID id); 
+    Optional<CareGiver> getCareGiverById(UUID id); 
     CareGiver createCareGiver(CareGiver careGiver); 
   
     Optional<CareGiver> updateCareGiver(UUID id, CareGiver updatedCareGiver); 
