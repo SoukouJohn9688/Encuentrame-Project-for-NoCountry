@@ -2,6 +2,7 @@ package com.encuentrame.project.encuentrame.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +23,7 @@ public class CareGiver {
     @Column(name = "care_giver_id")
     private UUID care_giver_id;
 
-    @OneToMany(mappedBy = "care_giver")
+    @OneToMany(mappedBy = "care_giver",fetch = FetchType.EAGER)
     private Set<Pet> pets;
 
     @NotBlank(message = "The name must not be blank")
@@ -31,9 +32,9 @@ public class CareGiver {
     private String surname;
     @NotBlank(message = "The email must not be blank")
     private String email;
-    @NotBlank(message = "The phone must not be blank")
+    @NotNull(message = "The phone must not be blank")
     private Long phone;
 
     private String city;
-    private String adress;
+    private String address;
 }
