@@ -1,7 +1,10 @@
 USE rescatame;
 show tables;
-select*from request_adoptions;
-INSERT INTO `rescatame`.`myUser` (`birthdate`, `email`, `first_name`, `last_name`, `password`, `role`) VALUES
+select*from request_adoption;
+select*from pet;
+select*from care_giver;
+select*From my_user;
+INSERT INTO `rescatame`.`my_user` (`birthdate`, `email`, `name`, `surname`, `password`, `role`) VALUES
 ('1990-05-15', 'user1@example.com', 'John', 'Doe', 'password1', 'USER'),
 ('1985-09-23', 'user2@example.com', 'Jane', 'Smith', 'password2', 'USER'),
 ('1998-03-07', 'user3@example.com', 'Michael', 'Johnson', 'password3', 'USER'),

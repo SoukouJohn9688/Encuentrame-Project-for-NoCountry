@@ -23,10 +23,10 @@ public class MyUser {
     @Column(name = "user_id")
     private UUID user_id;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "myUser")
     private Set<RequestAdoption> requestAdoptions;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "myUser")
     private Set<Article> articles;
 
     @NotBlank(message = "The name cannot be blank.")
