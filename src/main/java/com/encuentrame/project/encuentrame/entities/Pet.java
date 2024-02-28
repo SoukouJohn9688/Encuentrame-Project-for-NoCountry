@@ -39,6 +39,9 @@ public class Pet {
 
     @NotBlank(message = "The breed cannot be blank.")
     private String breed;
+
+    @NotBlank(message = "The name cannot be blank.")
+    private String pet_name;
     @NotBlank(message = "The age cannot be blank.")
     private  Integer age_months;
     private String color;

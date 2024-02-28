@@ -9,6 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.encuentrame.project.encuentrame.entities.CareGiver;
 import com.encuentrame.project.encuentrame.repositories.CareGiverRepository;
 import com.encuentrame.project.encuentrame.service.CareGiverService;
+import org.springframework.stereotype.Service;
+
+
+@Service
 
 public class CareGiverServiceImpl implements CareGiverService {
     private final CareGiverRepository careGiverRepository; 
