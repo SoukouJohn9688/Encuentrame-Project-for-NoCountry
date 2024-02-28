@@ -17,16 +17,18 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
-public class MyUserService implements UserDetailsService {
+public class MyUserServiceImpl implements UserDetailsService {
 
 
     @Autowired
     private MyUserRepository myUserRepository;
 
     @Transactional
-    public void register(String name, String email, String password, String password2) throws Exception{
+    public void createUser(String name, String email, String password, String password2) throws Exception{
         validar(name, email, password, password2);
 
         //Instaciamos
@@ -44,6 +46,42 @@ public class MyUserService implements UserDetailsService {
         myUserRepository.save(myUser);
 
     }
+
+
+    public List<MyUser> getAllMyUsers() {
+        return myUserRepository.findAll();
+    }
+
+
+    public Optional<MyUser> getMyUserById(UUID id) {
+        return myUserRepository.findById(id);
+    }
+
+
+    @Transactional
+    public Optional<MyUser> updateMyUser(UUID id, MyUser updatedUser) {
+        return myUserRepository.findById(id)
+                .map(user -> {
+                    user.setName(updatedUser.getName());
+                    user.setEmail(updatedUser.getEmail());
+                    user.setPassword(updatedUser.getPassword());
+                    user.setRole(updatedUser.getRole());
+                    user.setRequestAdoptions(updatedUser.getRequestAdoptions());
+
+                    return myUserRepository.save(user);
+                });
+    }
+
+    @Transactional
+    public boolean deleteUser(UUID id) {
+        return myUserRepository.findById(id)
+                .map(user -> {
+                    myUserRepository.delete(user);
+                    return true;
+                })
+                .orElse(false);
+    }
+
 
     private void validar(String name, String email, String password, String password2) throws Exception {
 
