@@ -1,6 +1,6 @@
 package com.encuentrame.project.encuentrame.config;
 
-import com.encuentrame.project.encuentrame.services.MyUserService;
+import com.encuentrame.project.encuentrame.services.MyUserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,30 +13,10 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class Security {
-//    @Bean
-//  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
-//
-//        http
-//                .authorizeHttpRequests((authz) -> authz
-//                        .anyRequest().authenticated()
-//                )
-//                .httpBasic(Customizer.withDefaults());
-//        return http.build();
-//    }
-//
-//
-//    @Bean
-//    public InMemoryUserDetailsManager userDetailsService() {
-//        UserDetails user = User.withDefaultPasswordEncoder()
-//                .username("user")
-//                .password("password")
-//                .roles("USER")
-//                .build();
-//        return new InMemoryUserDetailsManager(user);
-//    }
+
 //Para que la contraseña no sea simple, sino se encripte se usan esos dos métodos:
 @Autowired
-public MyUserService userServicio;
+public MyUserServiceImpl userServicio;
 
     //Este objeto lo recibimos por parámetro
 
