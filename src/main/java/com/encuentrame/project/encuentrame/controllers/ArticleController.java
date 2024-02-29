@@ -29,21 +29,21 @@ public class ArticleController {
   
     // Endpoint to retrieve all articles 
     @GetMapping("/api/articles")
-    public ResponseEntity<List<Article>> getAllarticles() { 
+    public ResponseEntity<List<Article>> getAllArticles() { 
         List<Article> articles = articleRepository.findAll(); 
         return new ResponseEntity<>(articles, HttpStatus.OK); 
     } 
   
     // Endpoint to retrieve a article by ID 
     @GetMapping("/api/articles/{id}") 
-    public ResponseEntity<Article> getarticleById(@PathVariable UUID id) { 
+    public ResponseEntity<Article> getArticleById(@PathVariable UUID id) { 
         return articleRepository.findById(id).map(article -> new ResponseEntity<>(article, HttpStatus.OK)) 
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND)); 
     } 
   
     // Endpoint to create a new article 
     @PostMapping("/api/articles")
-    public ResponseEntity<Article> createarticle(@RequestBody Article article) { 
+    public ResponseEntity<Article> createArticle(@RequestBody Article article) { 
         Article savedArticle = articleRepository.save(article); 
         return new ResponseEntity<>(savedArticle, HttpStatus.CREATED); 
     } 
@@ -52,7 +52,6 @@ public class ArticleController {
     @PutMapping("/api/articles/{id}") 
     public ResponseEntity<Article> updateArticle(@PathVariable UUID id, @RequestBody Article updatedArticle) { 
         return articleRepository.findById(id).map(article -> { 
-            article.setMyUser(updatedArticle.getMyUser()); 
             article.setTitle(updatedArticle.getTitle()); 
             article.setContent(updatedArticle.getContent()); 
             Article savedArticle = articleRepository.save(article); 
