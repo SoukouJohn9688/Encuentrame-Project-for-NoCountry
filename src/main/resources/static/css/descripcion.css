@@ -1,0 +1,188 @@
+/* Cambiar el color del fondo de la barra de desplazamiento */
+::-webkit-scrollbar {
+    background-color: #9bb6e3;
+}
+  
+/* Cambiar el color de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+    background-color: #013071;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #9bb6e3;
+    margin: 0;
+}
+
+section{
+    background-color: rgb(254, 255, 237);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 10px 0px 10px;
+    max-width: 80%;
+    margin: 140px auto 20px;
+    border-radius: 10px;
+}
+
+article{
+    width: 80%;
+    text-align: center;
+}
+
+#carrusel{
+    margin: 0;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.carousel{
+    height: 100%;
+}
+
+div.carousel-inner{
+    align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+.carousel-inner{
+    text-align: center; 
+}
+
+.carousel-inner img{
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.carousel-item{
+    text-align: center;
+}
+
+
+.carousel-item img{
+    max-height: 100%;
+    width: auto;
+    object-fit: cover;
+    border-radius: 5px; 
+    margin-left: 0;
+}
+
+.carousel-control-prev,
+.carousel-control-next{
+    font-size: 3em;
+    background: transparent;
+    color: #ff5733;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover{
+    transform: scale(1.2);
+}
+
+.carousel-control-prev{
+    margin-left: 10px;
+}
+
+.carousel-control-next{
+    margin-right: 20px;
+}
+
+.descripción{
+    background-color: #a1b7de;
+    width: 60%;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+article{
+    display: block;
+    width: 100%;
+}
+
+article h2{
+    font-size: 20px;
+}
+
+article h3, 
+article h5{
+    text-align: justify;
+    font-size: 17px;
+}
+
+
+.contactar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.contactar button{
+    background-color: #ff5733;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 0.3s;
+}
+
+.contactar button:hover {
+    background-color: #ff6f50;
+}
+
+
+
+/*DISEÑO WEB ADAPTABLE*/
+
+
+@media screen and (max-width:1130px){
+    .descripción{
+        width: 40%;
+        padding: 5px;
+    }
+
+    article h2{
+        font-size: 12px;
+    }
+    
+    article h3, 
+    article h5{
+        text-align: justify;
+        font-size: 10px;
+    }
+    
+}
+@media screen and (min-width: 1700px) and (max-width: 1920px) {
+    .descripción{
+        width: 60%;
+        padding: 10px;
+    }
+
+    article h2{
+        font-size: 20px;
+    }
+    
+    article h3, 
+    article h5{
+        text-align: justify;
+        font-size: 18px;
+    }
+}
