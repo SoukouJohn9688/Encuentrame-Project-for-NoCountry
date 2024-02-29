@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -28,14 +29,16 @@ public class MyUserServiceImpl implements UserDetailsService {
     private MyUserRepository myUserRepository;
 
     @Transactional
-    public void createUser(String name, String email, String password, String password2) throws Exception{
-        validar(name, email, password, password2);
+    public void createUser(String name, String surname, String email, LocalDate birthdate, String password, String password2) throws Exception{
+        validar(name, email,surname , birthdate,password, password2);
 
         //Instaciamos
         MyUser myUser = new MyUser();
 
         myUser.setName(name);
+        myUser.setSurname(surname);
         myUser.setEmail(email);
+        myUser.setBirthdate(birthdate);
 
         //Antes de usar el encoder: user.setPassword(password);
         //Usando el encoder.
@@ -63,7 +66,9 @@ public class MyUserServiceImpl implements UserDetailsService {
         return myUserRepository.findById(id)
                 .map(user -> {
                     user.setName(updatedUser.getName());
+                    user.setSurname(updatedUser.getSurname());
                     user.setEmail(updatedUser.getEmail());
+                    user.setBirthdate(updatedUser.getBirthdate());
                     user.setPassword(updatedUser.getPassword());
                     user.setRole(updatedUser.getRole());
                     user.setRequestAdoptions(updatedUser.getRequestAdoptions());
@@ -83,17 +88,25 @@ public class MyUserServiceImpl implements UserDetailsService {
     }
 
 
-    private void validar(String name, String email, String password, String password2) throws Exception {
+    private void validar(String name, String surname,String email, LocalDate birthdate,String password, String password2) throws Exception {
 
         if (name.isEmpty() ||  name == null) {
             throw new Exception("el name no puede ser nulo o estar vacío");
         }
+        if (surname.isEmpty() ||  surname == null) {
+            throw new Exception("el surname no puede ser nulo o estar vacío");
+        }
         if (email.isEmpty() || email == null) {
             throw new Exception("el email no puede ser nulo o estar vacio");
+        }
+
+        if (birthdate== null || birthdate.isBefore(LocalDate.of(1903, 01, 01))) {
+            throw new Exception("La fecha no puede ser nula, o usted no puede ser tan viejo/a");
         }
         if (password.isEmpty() || password == null || password.length() <= 5) {
             throw new Exception("La contraseña no puede estar vacía, y debe tener más de 5 dígitos");
         }
+
 
         if (!password.equals(password2)) {
             throw new Exception("Las contraseñas ingresadas deben ser iguales");
