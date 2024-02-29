@@ -32,10 +32,6 @@ public class CareGiverController {
         this.careGiverService = careGiverService;
     }
 
-
-
-
-  
     // Endpoint to retrieve all CareGivers 
     @GetMapping("/api/caregivers")
     public ResponseEntity<List<CareGiver>> getAllCareGivers() { 

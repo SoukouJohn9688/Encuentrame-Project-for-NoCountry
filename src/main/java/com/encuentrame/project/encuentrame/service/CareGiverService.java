@@ -10,7 +10,8 @@ public interface CareGiverService {
     List<CareGiver> getAllCareGivers(); 
   
     Optional<CareGiver> getCareGiverById(UUID id); 
-    CareGiver createCareGiver(CareGiver careGiver); 
+
+    CareGiver createCareGiver(CareGiver careGiver);
   
     Optional<CareGiver> updateCareGiver(UUID id, CareGiver updatedCareGiver); 
   

@@ -1,63 +1,82 @@
 package com.encuentrame.project.encuentrame.services;
 
+import com.encuentrame.project.encuentrame.entities.CareGiver;
+import com.encuentrame.project.encuentrame.entities.Pet;
+import com.encuentrame.project.encuentrame.entities.RequestAdoption;
+import com.encuentrame.project.encuentrame.repositories.CareGiverRepository;
+import com.encuentrame.project.encuentrame.service.CareGiverService;
+import com.encuentrame.project.encuentrame.service.PetService;
+import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.encuentrame.project.encuentrame.entities.CareGiver;
-import com.encuentrame.project.encuentrame.repositories.CareGiverRepository;
-import com.encuentrame.project.encuentrame.service.CareGiverService;
-import org.springframework.stereotype.Service;
-
 
 @Service
+@Transactional
 
 public class CareGiverServiceImpl implements CareGiverService {
-    private final CareGiverRepository careGiverRepository; 
-  
+
     @Autowired
-    public CareGiverServiceImpl(CareGiverRepository careGiverRepository) { 
-        this.careGiverRepository = careGiverRepository; 
-    } 
-  
-    @Override
-    public Optional<CareGiver> getCareGiverById(UUID id) { 
-        return careGiverRepository.findById(id); 
-    } 
-  
-    @Override
-    public List<CareGiver> getAllCareGivers() {
-        return careGiverRepository.findAll(); 
-    }
+    private CareGiverRepository careGiverRepository;
 
-    @Override
+    @Autowired
+    private PetService petService;
+
     public CareGiver createCareGiver(CareGiver careGiver) {
-        return careGiverRepository.save(careGiver); 
-    }
 
-    @Override
+        CareGiver careGiverRegister = new CareGiver();
+        careGiverRegister.setName(careGiver.getName());
+        careGiverRegister.setSurname(careGiver.getSurname());
+        careGiverRegister.setEmail(careGiver.getEmail());
+        careGiverRegister.setPhone(careGiver.getPhone());
+        careGiverRegister.setCity(careGiver.getCity());
+        careGiverRegister.setAddress(careGiver.getAddress());
+
+        return careGiverRepository.save(careGiverRegister);
+    }
+    public List<CareGiver> getAllCareGivers() {
+        return careGiverRepository.findAll();
+    }
+    public Optional<CareGiver> getCareGiverById(UUID id) {
+        return careGiverRepository.findById(id);
+    }
     public Optional<CareGiver> updateCareGiver(UUID id, CareGiver updatedCareGiver) {
-        return careGiverRepository.findById(id) 
-                .map(careGiver -> { 
-                    careGiver.setName(updatedCareGiver.getName()); 
-                    careGiver.setSurname(updatedCareGiver.getSurname()); 
-                    careGiver.setEmail(updatedCareGiver.getEmail()); 
-                    careGiver.setPhone(updatedCareGiver.getPhone()); 
-                    careGiver.setCity(updatedCareGiver.getCity()); 
-                    careGiver.setAddress(updatedCareGiver.getAddress()); 
-                    return careGiverRepository.save(careGiver); 
-                }); 
+
+        Optional<CareGiver> existingCareGiver = careGiverRepository.findById(id);
+
+        if (existingCareGiver.isPresent()) {
+            CareGiver careGiver = existingCareGiver.get();
+
+            careGiver.setName(updatedCareGiver.getName());
+            careGiver.setSurname(updatedCareGiver.getSurname());
+            careGiver.setEmail(updatedCareGiver.getEmail());
+            careGiver.setPhone(updatedCareGiver.getPhone());
+            careGiver.setCity(updatedCareGiver.getCity());
+            careGiver.setAddress(updatedCareGiver.getAddress());
+
+            CareGiver careGiverUpdate = careGiverRepository.save(careGiver);
+
+            return Optional.of(careGiverUpdate);
+        } else {
+            return Optional.empty();
+        }
     }
 
-    @Override
+    public Optional<CareGiver> getCareGiverByName(String name) {
+        return Optional.ofNullable(careGiverRepository.findByName(name));
+    }
+
     public boolean deleteCareGiver(UUID id) {
-        return careGiverRepository.findById(id) 
-                .map(careGiver -> { 
-                    careGiverRepository.delete(careGiver); 
-                    return true; 
-                }) 
-                .orElse(false); 
-    } 
+        return careGiverRepository.findById(id)
+                .map(careGiver -> {
+                    careGiverRepository.delete(careGiver);
+                    return true;
+                })
+                .orElse(false);
+    }
+
 }
