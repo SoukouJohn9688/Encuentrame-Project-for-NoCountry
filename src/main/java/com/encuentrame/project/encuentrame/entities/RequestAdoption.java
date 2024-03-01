@@ -1,6 +1,7 @@
 package com.encuentrame.project.encuentrame.entities;
 
 import com.encuentrame.project.encuentrame.enumerations.AdoptionStatus;
+import com.encuentrame.project.encuentrame.enumerations.HousingType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +24,7 @@ public class RequestAdoption {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private MyUser myUser;
 
     @ManyToOne
     @JoinColumn(name = "pet_id")
@@ -33,4 +34,13 @@ public class RequestAdoption {
     private AdoptionStatus adoptionStatus;
 
     private LocalDateTime creationDate;
+
+    private double Salary;
+
+    @Enumerated(EnumType.STRING)
+    private HousingType housingType;
+
+    private boolean sterilizationCommitment;
+
+
 }

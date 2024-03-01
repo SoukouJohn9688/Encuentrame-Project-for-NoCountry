@@ -1,18 +1,14 @@
 package com.encuentrame.project.encuentrame.entities;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.UuidGenerator;
 
 @Data
 @NoArgsConstructor
@@ -22,8 +18,9 @@ import lombok.NoArgsConstructor;
 public class Event {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @UuidGenerator
+    @Column(name = "event_id")
+    private UUID event_id;
     @NotBlank(message = "The title cannot be blank.")
     private String title;
     @NotBlank(message = "The content cannot be blank.")
@@ -38,6 +35,6 @@ public class Event {
     @ManyToOne
     @JoinColumn(name = "user_id")
     @NotBlank(message = "The user_id cannot be blank.")
-    private User user;
+    private MyUser myUser;
     
 }

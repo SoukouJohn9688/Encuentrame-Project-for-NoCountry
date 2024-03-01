@@ -18,10 +18,14 @@ import java.util.UUID;
 public class Pet {
 
 
+
+
     @Id
     @UuidGenerator
     @Column(name = "pet_id")
     private UUID pet_id;
+
+
 
     @OneToMany(mappedBy = "pet")
     private Set<RequestAdoption> requestAdoptionSet;
@@ -35,6 +39,9 @@ public class Pet {
 
     @NotBlank(message = "The breed cannot be blank.")
     private String breed;
+
+    @NotBlank(message = "The name cannot be blank.")
+    private String pet_name;
     @NotBlank(message = "The age cannot be blank.")
     private  Integer age_months;
     private String color;
@@ -43,8 +50,8 @@ public class Pet {
 
     @NotBlank(message = "The description cannot be blank.")
     private String description;
-    @NotBlank(message = "The care-giver Id cannot be blank.")
-    private Integer id_care_giver;
+//    @NotBlank(message = "The care-giver Id cannot be blank.")
+//    private Integer id_care_giver;
     @NotBlank(message = "The adoption state cannot be blank.")
     private boolean adopted;
 

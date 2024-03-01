@@ -17,17 +17,15 @@ public class Article {
 
     @Id
     @UuidGenerator
-    private UUID id;
+    private UUID article_id;
 
     @ManyToOne()
     @JoinColumn(name = "user_id")
-    private User user;
+    private MyUser myUser;
 
     @NotBlank(message = "The title cannot be blank.")
     private String title;
     @NotBlank(message = "The content cannot be blank.")
     private String content;
-    @NotBlank(message = "The admin Id cannot be blank.")
-    private Integer id_admin;
 
 }
