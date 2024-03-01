@@ -46,23 +46,23 @@
             <h1>Registrarse</h1>
             <div class="usuariocontraseña">
                 <div class="inputLogin">
-                        <input  type="text"  id="nombre" class="inputLogin" placeholder="Nombre"  th:value="${name}"   autocomplete="off" >
+                        <input  type="text"  name="name" id="name" class="inputLogin" placeholder="Nombre"  th:value="${name}"   autocomplete="off" >
                     </div>
                     <div class="inputLogin">
-                    <input type="text" id="apellido" class="inputLogin" placeholder="Apellido" th:value="${surname}"  autocomplete="off">
+                    <input type="text" name="surname" id="apellido" class="inputLogin" placeholder="Apellido" th:value="${surname}"  autocomplete="off">
                     </div>
                     <div class="inputLogin">
-                        <input type="email"  id="email" class="inputLogin" placeholder="Mail"  th:value="${email}" autocomplete="off">
+                        <input type="email" name="email"  id="email" class="inputLogin" placeholder="Mail"  th:value="${email}" autocomplete="off">
                     </div>
 
                 <div class="inputLogin">
-                    <input type="date" id="" class="inputLogin" placeholder="Fecha de cumpleaños" th:value="${birthdate}" autocomplete="off" >
+                    <input type="date"  name="birthdate"  id="birthdate" class="inputLogin" placeholder="Fecha de cumpleaños" th:value="${birthdate}" autocomplete="off" >
                 </div>
                 <div class="inputLogin">
-                        <input type="password" id="contraseña" class="inputLogin" placeholder="Contraseña"  th:value="${password}" autocomplete="off" >
+                        <input type="password" name="password" id="contraseña" class="inputLogin" placeholder="Contraseña"  th:value="${password}" autocomplete="off" >
                     </div>    
                     <div class="inputLogin">
-                    <input type="password"  id="confirmarcontraseña" class="inputLogin" placeholder="Confirmar Contraseña"  th:value="${password2}"  autocomplete="off">
+                    <input type="password"  name="password2" id="confirmarcontraseña" class="inputLogin" placeholder="Confirmar Contraseña"  th:value="${password2}"  autocomplete="off">
                     </div>
                 </div>
                <button id="registrarseButton"  type="submit">Registrarse</button>
@@ -98,7 +98,7 @@
         </div> 
     </footer>
 
-    <script src="js/registrarse.js"></script> 
+    <script src="js/registrarse.js"></script>
     
 </body>
 </html>

@@ -60,7 +60,7 @@ public class HomeController {
         } catch (Exception ex) {
 
             model.put("error", ex.getMessage());
-            model.put("nombre", name);
+            model.put("name", name);
             model.put("email", email);
 
             return "registrarse.html";
@@ -70,6 +70,8 @@ public class HomeController {
 
     @GetMapping("/login")
     public String login(@RequestParam(required = false) String error, ModelMap model ) {
+
+
 
         if (error != null) {
             model.put("error", "Usuario o Contraseña invalidos! Intente de nuevo.");
