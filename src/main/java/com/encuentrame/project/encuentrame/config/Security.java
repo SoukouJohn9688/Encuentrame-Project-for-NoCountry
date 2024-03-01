@@ -12,6 +12,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
+
 public class Security {
 
 //Para que la contraseña no sea simple, sino se encripte se usan esos dos métodos:

@@ -2,6 +2,7 @@ package com.encuentrame.project.encuentrame.entities;
 
 import com.encuentrame.project.encuentrame.enumerations.UserRole;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import jakarta.validation.constraints.NotBlank;
 import org.hibernate.annotations.UuidGenerator;
@@ -37,7 +38,7 @@ public class MyUser {
     private String email;
     @NotBlank(message = "The password cannot be blank.")
     private String password;
-    @NotBlank(message = "The birthdate cannot be blank.")
+    @NotNull(message = "The birthdate cannot be blank.")
     private LocalDate birthdate;
     @Enumerated(EnumType.STRING)
     private UserRole role;
