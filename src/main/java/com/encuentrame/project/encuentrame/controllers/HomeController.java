@@ -31,16 +31,9 @@ public class HomeController {
         return "index";
     }
 
-
-    @GetMapping("/mascotas")
-    public String getMascotas() {
-        return "adopciones";
-    }
-
-
-    @GetMapping("/registrar")
+    @GetMapping("/registrarse")
     public String registrar() {
-        return "registrarse.html";
+        return "registrarse";
     }
 
 

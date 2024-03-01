@@ -42,30 +42,29 @@
     </nav>
 
     <section>
-        <form th:action="@{/registro}" th:method="post" >
+        <form th:action="@{/api/myuser}" th:method="post">
             <h1>Registrarse</h1>
             <div class="usuariocontraseña">
                 <div class="inputLogin">
-                        <input  type="text"  name="name" id="name" class="inputLogin" placeholder="Nombre"  th:value="${name}"   autocomplete="off" >
+                        <input type="text" id="name" class="inputLogin" placeholder="Nombre" autocomplete="off">
                     </div>
                     <div class="inputLogin">
-                    <input type="text" name="surname" id="apellido" class="inputLogin" placeholder="Apellido" th:value="${surname}"  autocomplete="off">
+                    <input type="text" id="surname" class="inputLogin" placeholder="Apellido" autocomplete="off">
                     </div>
                     <div class="inputLogin">
-                        <input type="email" name="email"  id="email" class="inputLogin" placeholder="Mail"  th:value="${email}" autocomplete="off">
+                        <input type="email" id="email" class="inputLogin" placeholder="Mail" autocomplete="off">
                     </div>
-
-                <div class="inputLogin">
-                    <input type="date"  name="birthdate"  id="birthdate" class="inputLogin" placeholder="Fecha de cumpleaños" th:value="${birthdate}" autocomplete="off" >
-                </div>
-                <div class="inputLogin">
-                        <input type="password" name="password" id="contraseña" class="inputLogin" placeholder="Contraseña"  th:value="${password}" autocomplete="off" >
+                    <div class="inputLogin">
+                        <input type="date" id="birthday" class="inputLogin" placeholder="Fecha de nacimiento" autocomplete="off" >
                     </div>    
                     <div class="inputLogin">
-                    <input type="password"  name="password2" id="confirmarcontraseña" class="inputLogin" placeholder="Confirmar Contraseña"  th:value="${password2}"  autocomplete="off">
+                        <input type="password" id="password" class="inputLogin" placeholder="Contraseña" autocomplete="off" >
+                    </div>    
+                    <div class="inputLogin">
+                    <input type="password" id="password2" class="inputLogin" placeholder="Confirmar Contraseña" autocomplete="off">
                     </div>
                 </div>
-               <button id="registrarseButton"  type="submit">Registrarse</button>
+               <button id="registrarseButton"  type="submit">RegistrarseAqui</button>
                 <div>
                     <p class="cuenta">Ya tienes cuenta?</p>
                     <a href="ingresar.html" class="inicio">Iniciar Sesión</a>      
@@ -98,7 +97,7 @@
         </div> 
     </footer>
 
-    <script src="js/registrarse.js"></script>
+    <!-- <script src="js/registrarse.js"></script> -->
     
 </body>
 </html>

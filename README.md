@@ -22,5 +22,5 @@ MYSQL_DB_PASSWORD
 
 ## Notas Matias
 Ultimo commit tengo servicios y controllers de Article y Event, en adicion a mi version de CareGiver que pronto reemplazare con la de Juan, Aun no estan bien probado el CRUD de estas entidades porque no pude crear un Usuario para los articulos y eventos.
-
+Estoy batallando con el MyUser, lo estoy editando para crear algo sencillo que pueda probar con el back, por mas que retroceda un poco en seguridad de momento
 
