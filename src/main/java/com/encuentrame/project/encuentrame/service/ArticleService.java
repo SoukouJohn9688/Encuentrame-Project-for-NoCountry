@@ -10,7 +10,7 @@ public interface ArticleService {
     List<Article> getAllArticles(); 
   
     Optional<Article> getArticleById(UUID id); 
-    Article createArticle(Article Article); 
+    Article createArticle(String title, String content, UUID user_id); 
   
     Optional<Article> updateArticle(UUID id, Article updatedArticle); 
   
