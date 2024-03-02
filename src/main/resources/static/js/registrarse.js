@@ -14,7 +14,7 @@
 // });
 
 document.getElementById("registrarseButton").addEventListener("click", function() {
-    let nombre = document.getElementById("nombre").value;
+    let nombre = document.getElementById("name").value;
     let apellido = document.getElementById("apellido").value;
     let email = document.getElementById("email").value;
     let password1 = document.getElementById("contraseña").value;
