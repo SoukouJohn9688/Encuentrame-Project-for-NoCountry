@@ -96,3 +96,25 @@ form .registrarse{
     text-align: center;
     padding: 90px;
 }
+
+.NuevaMascota {
+    font-size: 25px;
+    padding-top: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.imagenMascota {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid blue; /* Borde azul */
+    display: flex;
+    margin: 0 auto; /* Centrar */
+    /*justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;*/
+    
+    
+}

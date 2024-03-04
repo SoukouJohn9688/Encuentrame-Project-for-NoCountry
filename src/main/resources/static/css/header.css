@@ -96,10 +96,10 @@ ul{
 
 /*DISEÑO WEB ADAPTABLE*/
 
-@media screen and (max-width: 1340px){
+@media screen and (max-width: 1800px){
   .nav-list a{ 
-    margin: 0 1px;
-    font-size: 16px;
+    margin: 0 2px;
+    font-size: 18px;
   }
 }
 
