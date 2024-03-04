@@ -4,7 +4,7 @@ package com.encuentrame.project.encuentrame.controllers;
 import com.encuentrame.project.encuentrame.services.MyUserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,11 +31,12 @@ public class MyUserController {
 //        return "<p th:text></p>";
 //    }
 
-//    @PostMapping("/myusers")
-//    public String login(@RequestParam ){
-//
-//    }
+    @PostMapping("/myusers")
+    public String login(@RequestParam String username, @RequestParam String password, Model model) {
+        System.out.println("AAAAAAAA");
 
+        return null;
+   }
 
 
 }

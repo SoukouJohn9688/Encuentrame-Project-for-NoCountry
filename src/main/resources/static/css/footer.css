@@ -7,8 +7,8 @@
     position: static;
     z-index: 100;
     border: 10px;
-    color: rgba(245, 245, 245, 0.901);  
-    background-color: #326b7483;
+    color: #5d3891;
+    background-color: #FF731D;
 }
 
 div.footer{
@@ -39,7 +39,7 @@ div.container{
 
 .logo-container-footer img{
     max-height: 100%;
-    width: auto; 
+    width: auto;
 }
 
 .social-icons{
@@ -61,13 +61,13 @@ div.container{
 }
 
 .social-icons a{
-    color: rgba(245, 245, 245, 0.901);
+    color: #5d3891;
     font-size: 20px;
 
 }
 
 .contact-container{
-    
+
     flex-direction: column;
     text-align: center;
     margin-left: 30px;
@@ -86,11 +86,11 @@ div.container{
 
     /*derechos*/
 .derechos {
-    
+
     margin-left: 30px;
     padding: 10px;
     font-size: 16px;
-} 
+}
 
 
 
@@ -105,12 +105,12 @@ div.container{
         height: 130px;
         width: auto;
     }
-    
+
     .logo-container-footer img{
         height: 150px;
         width: 100%;
     }
-    
+
     .social-icons a{
         font-size: 16px;
     }
@@ -125,7 +125,7 @@ div.container{
 
     .derechos {
         font-size: 12px;
-    
+
     }
 }
 
@@ -136,7 +136,7 @@ div.container{
     div.container{
         padding: 0px 0px;
     }
-    
+
     .logo-container-footer,
     .derechos,
     .contact-container,
@@ -154,7 +154,7 @@ div.container{
 
     .logo-container-footer img{
         max-height: 100%;
-        width: auto; 
+        width: auto;
     }
 
     .derechos{
@@ -176,7 +176,7 @@ div.container{
     }
 
 }
-/* 
+/*
 
     .social-icons{
         justify-content: flex-start;
@@ -208,30 +208,30 @@ div.container{
     }
 
     .derechos {
-        
+
         align-items: center;
         justify-content: center;
         text-align: center;
         background-color: whitesmoke;
         color: blue;
         font-size: 10px;
-    
+
     }
 } */
 
-    
+
 
     /* @media screen and (max-width: 768px) {
         .logo-container-footer img {
           max-height: 100px;
         }
-      
+
         .social-icons {
           justify-content: center;
         }
-      
+
         .derechos {
           text-align: justify;
         }
       } */
- 
+

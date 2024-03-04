@@ -2,15 +2,15 @@ package com.encuentrame.project.encuentrame.controllers;
 
 
 import com.encuentrame.project.encuentrame.entities.MyUser;
-import com.encuentrame.project.encuentrame.entities.Pet;
 import com.encuentrame.project.encuentrame.services.MyUserServiceImpl;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import com.encuentrame.project.encuentrame.service.PetService;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 import java.util.UUID;
@@ -22,9 +22,6 @@ public class HomeController {
     private final MyUserServiceImpl myUserService;
 
     @Autowired
-    private PetService petService;
-
-    @Autowired
     public HomeController(MyUserServiceImpl myUserService) {
         this.myUserService = myUserService;
     }
@@ -34,10 +31,19 @@ public class HomeController {
         return "index";
     }
 
+
+    @GetMapping("/mascotas")
+    public String getMascotas() {
+        return "adopciones";
+    }
+
+
     @GetMapping("/registrar")
     public String registrar() {
         return "registrarse.html";
     }
+
+
 
     @PostMapping("/registro")
     public String register(@RequestParam String name,
@@ -48,7 +54,7 @@ public class HomeController {
                            @RequestParam LocalDate birthdate, ModelMap model) {
 
         try {
-            myUserService.createUser(name, surname, email, birthdate, password, password2);
+            myUserService.createUser(name,surname,email, birthdate,password,password2);
 
             model.put("exito", "Usuario registrado correctamente!");
             model.put("name", name);
@@ -70,7 +76,8 @@ public class HomeController {
     }
 
     @GetMapping("/login")
-    public String login(@RequestParam(required = false) String error, ModelMap model) {
+    public String login(@RequestParam(required = false) String error, ModelMap model ) {
+        System.out.println("AAAAAA");
 
 
         if (error != null) {
@@ -81,7 +88,7 @@ public class HomeController {
     }
 
     @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')")
-    @GetMapping("/inicio")
+    @GetMapping("/iniciologged")
     public String initSession(HttpSession session) {
 
         MyUser logued = (MyUser) session.getAttribute("usuariosession");
@@ -95,7 +102,7 @@ public class HomeController {
 
     @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_MODERATOR')")
     @GetMapping("/perfil")
-    public String perfil(ModelMap modelo, HttpSession session) {
+    public String perfil(ModelMap modelo,HttpSession session){
         MyUser usuario = (MyUser) session.getAttribute("usersession");
         modelo.put("usuario", usuario);
         return "usuario_modificar.html";
@@ -103,7 +110,7 @@ public class HomeController {
 
     @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN','ROLE_MODERATOR')")
     @PostMapping("/perfil/{id}")
-    public String update(@PathVariable UUID id,  @ModelAttribute("updatedUser") MyUser updatedUser, ModelMap model) {
+    public String update(@PathVariable UUID id, @PathVariable MyUser updatedUser,ModelMap model) {
 
         try {
             myUserService.updateMyUser(id, updatedUser);
@@ -120,6 +127,4 @@ public class HomeController {
             return "usuario_modificar.html";
         }
     }
-
-
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org ">
 <head>
         
         <meta charset="UTF-8">
@@ -26,7 +26,7 @@
         <title>Mascota</title>
 
         <link rel="stylesheet" href="css/header.css">
-        <link rel="stylesheet" href="css/footer.css"> 
+        <link rel="stylesheet" href="css/footer.css">
         <link rel="stylesheet" href="css/descripcion.css">
 
         
@@ -42,7 +42,7 @@
             <nav class="header" >
                 
                 <div class="logo-container">
-                    <a href="index.html">
+                    <a href="/">
                         <img src="imagenes/logo1.png" alt="Logo Encuentrame">
                     </a>    
                 </div>
@@ -57,7 +57,7 @@
                     
                     <div class="botones-container">
                         <a class="ingresarheader" href="ingresar.html" >Ingresar</a>
-                        <a class="registrarseheader" href="registrarse.html" >Registrarse</a> 
+                        <a class="registrarseheader" href="/registrarse" >Registrarse</a>
                     </div>
 
                 </ul>
@@ -104,10 +104,10 @@
                 </button>
             </div>
 
-            <div class="descripción">
+            <div class="descripción" th:object="${pet}" th:action="@{/descripcionmascotas}" method="post"  >
                 <article>
-                    <h2>Ignacio -No country-</h2>
-                    <h3>Edad: 2 años, Tamaño: Grande, Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium error ipsum, placeat nam vero a porro odit sit alias nesciunt tenetur necessitatibus deserunt sunt temporibus in magnam consequatur sint molestiae!</h3>
+                    <h2>Hola</h2>
+                    <h3 > [[|Edad: ${age_months}|]], Tamaño: Grande, Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium error ipsum, placeat nam vero a porro odit sit alias nesciunt tenetur necessitatibus deserunt sunt temporibus in magnam consequatur sint molestiae!</h3>
                     <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorum voluptas quo commodi, distinctio minima. Voluptas libero quo ratione quia esse consequuntur aspernatur, beatae, inventore minus, recusandae omnis dolore tempora.</h5>
                 </article>
                 <div class="contactar">

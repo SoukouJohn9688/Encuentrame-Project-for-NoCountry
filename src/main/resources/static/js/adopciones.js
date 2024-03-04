@@ -92,7 +92,7 @@
         
         mosaicItem.innerHTML = `
         
-          <a href="descripcion.html">
+          <a href="/listarMascota">
               <img src="${item.imagenSrc}" alt="Imagen ${index + 1}">
             </a>
             <div class="imagen-texto">
