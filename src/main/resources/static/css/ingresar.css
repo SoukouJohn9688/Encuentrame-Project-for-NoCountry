@@ -10,8 +10,8 @@ section {
 form {
     width: 450px;
     height: 450px;
-    background: #21295c;
-    color: #fff;
+    background: #FF731D;
+    color: #5d3891;
     padding: 5px 20px;
     border-radius: 15px;
 }
@@ -23,7 +23,7 @@ form button:hover {
 /*texto ingresar*/
 h1 {
     font-size: 25px;
-    color: #fff;
+    color: #5d3891;
     text-align: center;
     padding: 40px;
 }
@@ -32,11 +32,11 @@ h1 {
     display: flex;
     flex-direction: row;
     width: 100%;
-    border: 2px solid #2a4494;
+    border: 2px solid #5d3891;
     border-radius: 30px;
     margin: 10px 0px;
     align-items: center;
-    
+
 }
 
 /*icono*/
@@ -50,9 +50,9 @@ h1 {
 
 .inputLogin input {
     border: none;
-    background: transparent;    
+    background: transparent;
     font-size: 15px;
-    color: #fff;
+    color: #5d3891;
     width: 100%;
     outline: none;
 }
@@ -60,7 +60,7 @@ h1 {
 /*olvide la contraseña y */
 form .contraseña{
     text-decoration: none;
-    color: #2a4494;
+    color: #E8E2E2;
 }
 
 /*boton iniciar sesion*/
@@ -71,15 +71,15 @@ form button {
     border-radius: 20px;
     font-weight: bold;
     font-size: 16px;
-    color: #fff;
-    background: #2a4494;
+    color: #FF731D;
+    background: #5d3891;
     margin-top: 30px;
     cursor: pointer;
 }
 
 /*no tienes cuenta*/
 form p {
-    color: #2a4494;
+    color: #E8E2E2;
 }
 
 
@@ -91,7 +91,7 @@ form div.registrarse{
 }
 
 form .reg {
-    color: #fff;
+    color: #5d3891;;
 }
 
 

@@ -70,7 +70,7 @@ public class HomeController {
 
     @GetMapping("/login")
     public String login(@RequestParam(required = false) String error, ModelMap model ) {
-
+        System.out.println("AAAAAA");
 
 
         if (error != null) {

@@ -1,8 +1,8 @@
 
 ::-webkit-scrollbar {
-    background-color: #9bb6e3;
+    background-color: #f38282;
 }
-  
+
 ::-webkit-scrollbar-thumb {
     background-color: #21295c;
 }
@@ -10,7 +10,7 @@
 
 
 body{
-    background-color: #9bb6e3;
+    background-color: #5d3891;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -19,7 +19,7 @@ h1{
     align-items: center;
     justify-content: center;
     padding-top: 130px;
-    color: #013071;
+    color: #5d3891;
     position: relative;
     font-size: 40px;
 }
@@ -31,9 +31,9 @@ h1{
     background-color: rgb(1, 47, 111);
     color: white;
     border-radius: 5px;
-    text-decoration: none; 
+    text-decoration: none;
     line-height: 50px;
-    display: flex; 
+    display: flex;
 }
 
  .filter-button i {
@@ -65,7 +65,7 @@ h1{
 }
 
 .imagen-texto{
-    background-color: rgba(102, 178, 240, 0.984);
+    background-color: #FF731D;
     color: white;
     padding: 10px;
     position: relative;
@@ -88,7 +88,7 @@ h1{
         font-size: 30px;
         padding-top: 100px;
     }
-    
+
     i.fa-solid.fa-arrow-left.fa-beat.fa-1xl{
         margin-left: 50px;
     }
@@ -100,38 +100,38 @@ h1{
     .imagen-texto h3 {
         font-size: 14px;
     }
-    
+
     .imagen-texto p {
         font-size: 106px;
     }
 }
- 
+
 
 @media screen and (max-width: 768px) {
     .carousel-inner {
       width: 100%;
       height: 300px;
     }
-  
+
     .carousel-item {
       width: 100%;
       height: 300px;
     }
-  
+
     .carousel-control-prev,
     .carousel-control-next {
       width: 30px;
       height: 30px;
     }
-  
+
     .carousel-control-prev {
       margin-top: 20px;
     }
-  
+
     .carousel-control-next {
       margin-top: 20px;
     }
-  
+
     .imagen-texto {
       display: none;
     }
@@ -156,16 +156,16 @@ h1{
 
 #calendario {
     border-radius: 10px;
-    background-color: #97b2df;
+    background-color: #e8e2e2;
     width: 80%;
     margin: 0 auto;
 }
 
-#eventos {    
+#eventos {
     width: 80%;
     margin: 30px auto;
     font-size: larger;
-    color: #013071;
+    color: #FF731D;
 }
 
 #lista-eventos {
@@ -179,21 +179,21 @@ h1{
 }
 
 #calendario .fc-day-today {
-    background-color: #0b4ca8;
+    background-color: #5d3891;
 }
 
 #calendario .fc-day{
-    color: #013071;
+    color: #5d3891;
 }
 
 #calendario .fc-event {
-    background-color: rgb(221, 34, 34);
+    background-color: #FF731D;
     color: #9bb6e3;
 }
 
 #calendario .fc-today-button{
-    background-color: #9bb6e3;
-    color: #013071;
+    background-color: #FF731D;
+    color: #5d3891;
 }
 
 
@@ -223,11 +223,11 @@ h1{
     height: 80%;
     object-fit:cover;
     border-radius: 5px;
-    
+
 }
 
 .mosaic-item .imagen-texto{
-    background-color: rgba(102, 178, 240, 0.7);   
+    background-color: rgba(102, 178, 240, 0.7);
     color: white;
     padding: 20px;
     position: absolute;
