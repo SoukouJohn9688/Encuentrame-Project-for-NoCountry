@@ -130,4 +130,9 @@ public class HomeController {
     public String sobrenosotros() {
         return "sobrenosotros";
     }
+
+    @GetMapping("/request")
+    public String request() {
+        return "request";
+    }
 }
