@@ -36,12 +36,12 @@ public class PetController {
     /*@GetMapping("/creation")
     public String createPetForm(Model model) {
         model.addAttribute("Pet","Registre una mascota" );
-        return ("FormAdoptionPet.html");
+        return ("FormCreatePet.html");
     }*/
     @GetMapping("/creation")
     public String createPetForm(Model model) {
         model.addAttribute("pet", new Pet());
-        return "FormAdoptionPet.html";
+        return "FormCreatePet.html";
     }
 
     @PostMapping("/createAnimal")
@@ -54,7 +54,7 @@ public class PetController {
 
         }catch(Exception exception){
             logger.error("Error creating PET: " + exception.getMessage() + " cause: " + exception.getCause());
-            return ("FormAdoptionPet.html");
+            return ("FormCreatePet.html");
         }
     }
 
@@ -67,7 +67,6 @@ public class PetController {
         model.addAttribute("Mascotas", pets);
         return "descripcion.html"; //Pendiente de crear Thymeleaf
     }
-
     @GetMapping("/descripcionmascotas")
     public String displayDescription (ModelMap model){
 
