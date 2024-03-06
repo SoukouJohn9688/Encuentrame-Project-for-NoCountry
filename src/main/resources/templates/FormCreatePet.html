@@ -39,7 +39,7 @@
  <div class="container">
 
      <div class="d-flex justify-content-center mt-3">
-         <form th:object="${pet}" th:action="@{createAnimal}" method="post">
+         <form th:object="${pet}" th:action="@{createAnimal}" method="post" enctype="multipart/form-data">
              <h1>¡REGISTRA UNA NUEVA MASCOTA!</h1>
              <!--<label for="pet_name">Nombre:</label>
              <input type="text" id="pet_name" name="pet_name" th:field="*{pet_name}" required/>-->
@@ -81,7 +81,7 @@
                  <input type="text" name="description" id="description" class="inputLogin" placeholder="Descripción" autocomplete="off">
              </div>
 
-             <input type="file" class="form-control" name="archivo" >
+             <input type="file" class="form-control" name="image" >
 
              <button type="submit">Crear Mascota</button>
          </form>

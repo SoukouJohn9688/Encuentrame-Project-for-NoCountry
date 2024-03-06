@@ -31,6 +31,9 @@ public class Pet {
     @JoinColumn(name = "care_giver_id")
     private CareGiver care_giver;
 
+
+
+
     @Enumerated(EnumType.STRING)
     @Column (name ="specie")
     private Species specie;
@@ -45,6 +48,7 @@ public class Pet {
     private  Integer age_months;
 
     private String color;
+    private String image_url;
 
     @Enumerated(EnumType.STRING)
     private Size size;
