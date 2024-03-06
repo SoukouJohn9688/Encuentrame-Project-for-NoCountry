@@ -34,6 +34,7 @@ public class RequestAdoptionImpl implements RequestAdoptionService {
 
 
     public RequestAdoption createRequestAdoption(UUID userId, UUID petId) {
+        //Omito mientras cargo un usuario
         UserDetails user = userDetailsService.loadUserByUsername("username");
         Optional<Pet> pet = petService.getPetById(petId);
 

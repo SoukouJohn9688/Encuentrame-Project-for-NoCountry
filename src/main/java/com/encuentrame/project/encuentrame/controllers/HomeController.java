@@ -37,6 +37,11 @@ public class HomeController {
         return "adopciones";
     }
 
+    @GetMapping("/adopciones")
+    public String getRequestAdoption() {
+        return "RequestAdoption.html";
+    }
+
 
     @GetMapping("/registrar")
     public String registrar() {
