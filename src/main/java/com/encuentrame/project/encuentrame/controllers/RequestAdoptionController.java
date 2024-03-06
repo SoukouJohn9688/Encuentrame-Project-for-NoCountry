@@ -60,9 +60,15 @@ public class RequestAdoptionController {
   
     @PostMapping("/api/requestAdoptions")
     public ResponseEntity<RequestAdoption> createRequestAdoption(@RequestBody RequestAdoption requestAdoption) { 
-        RequestAdoption savedRequestAdoption = requestAdoptionRepository.save(requestAdoption); 
-        return new ResponseEntity<>(savedRequestAdoption, HttpStatus.CREATED); 
-    } 
+        RequestAdoption savedRequestAdoption = requestAdoptionServiceImpl.createRequestAdoption(
+            requestAdoption.getMyUser().getUser_id(),
+            requestAdoption.getPet().getPet_id(),
+            requestAdoption.getSalary(),
+            requestAdoption.getHousingType(),
+            requestAdoption.isSterilizationCommitment()
+        );
+        return new ResponseEntity<>(savedRequestAdoption, HttpStatus.CREATED);
+    }
 //     @PostMapping("/api/requestAdoptions")
 //     public ResponseEntity<RequestAdoption> createRequestAdoption(@RequestBody RequestAdoption request) {
 

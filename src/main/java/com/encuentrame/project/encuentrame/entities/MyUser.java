@@ -1,6 +1,8 @@
 package com.encuentrame.project.encuentrame.entities;
 
 import com.encuentrame.project.encuentrame.enumerations.UserRole;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -24,7 +26,8 @@ public class MyUser {
     @Column(name = "user_id")
     private UUID user_id;
 
-    @OneToMany(mappedBy = "myUser", fetch = FetchType.EAGER)
+    @JsonIgnore
+    @OneToMany(mappedBy = "myUser")
     private Set<RequestAdoption> requestAdoptions;
 
     @OneToMany(mappedBy = "myUser", fetch = FetchType.EAGER)
