@@ -24,7 +24,7 @@ public class Pet {
     @Column(name = "pet_id", columnDefinition = "BINARY(16)")
     private UUID pet_id;
 
-    @OneToMany(mappedBy = "pet")
+    @OneToMany(mappedBy = "pet", fetch = FetchType.EAGER)
     private Set<RequestAdoption> requestAdoptionSet;
 
     @ManyToOne()

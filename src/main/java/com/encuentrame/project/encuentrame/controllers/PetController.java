@@ -7,7 +7,10 @@ import com.encuentrame.project.encuentrame.service.PetService;
 import jakarta.validation.Valid;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -104,6 +107,19 @@ public class PetController {
         return null; // Pendiente Thymeleaf
     }
 
+    @RestController
+    @Transactional(readOnly = true)
+public class PetApiController{
+    @GetMapping("/api/pets")
+    public ResponseEntity<List<Pet>> getAllPets() {
+        List<Pet> pets = petRepository.findAll();
+        if (!pets.isEmpty()) {
+            return new ResponseEntity<>(pets, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+}
 
 
 }

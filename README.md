@@ -23,4 +23,9 @@ MYSQL_DB_PASSWORD
 ## Notas Matias
 Ultimo commit tengo servicios y controllers de Article y Event, en adicion a mi version de CareGiver que pronto reemplazare con la de Juan, Aun no estan bien probado el CRUD de estas entidades porque no pude crear un Usuario para los articulos y eventos.
 Estoy batallando con el MyUser, lo estoy editando para crear algo sencillo que pueda probar con el back, por mas que retroceda un poco en seguridad de momento
+---
+Cree un GetAllUsers y un GetAllPets que creo que me servira para crear mi RequestAdoption CRUD. Podria evaluar eliminarse estas modificaciones de users y pets, tuve que hacer leves modificaciones en las entidades.
+
+Probablemente tenga que rehacer el CREATE del serviceIMPL si no logro adaptarlo, con ello el Controller tambien, creare un RestController que adaptare a controller luego cuando haya manera de manejar login y sesiones.
+
 

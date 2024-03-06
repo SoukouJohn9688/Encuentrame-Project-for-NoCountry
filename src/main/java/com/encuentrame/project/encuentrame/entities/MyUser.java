@@ -24,10 +24,10 @@ public class MyUser {
     @Column(name = "user_id")
     private UUID user_id;
 
-    @OneToMany(mappedBy = "myUser")
+    @OneToMany(mappedBy = "myUser", fetch = FetchType.EAGER)
     private Set<RequestAdoption> requestAdoptions;
 
-    @OneToMany(mappedBy = "myUser")
+    @OneToMany(mappedBy = "myUser", fetch = FetchType.EAGER)
     private Set<Article> articles;
 
     @NotBlank(message = "The name cannot be blank.")

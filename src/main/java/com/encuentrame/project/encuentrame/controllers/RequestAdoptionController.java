@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.encuentrame.project.encuentrame.entities.Article;
+import com.encuentrame.project.encuentrame.entities.MyUser;
+import com.encuentrame.project.encuentrame.entities.Pet;
 import com.encuentrame.project.encuentrame.entities.RequestAdoption;
 import com.encuentrame.project.encuentrame.repositories.RequestAdoptionRepository;
 import com.encuentrame.project.encuentrame.service.PetService;
@@ -34,12 +36,13 @@ public class RequestAdoptionController {
     private RequestAdoptionImpl requestAdoptionServiceImpl;
 
 
-    private RequestAdoptionRepository requestAdoptionRepository = null;
+    private RequestAdoptionRepository requestAdoptionRepository;
 
     @Autowired
-    public RequestAdoptionController(RequestAdoptionController requestAdoptionController) { 
-        this.requestAdoptionRepository = requestAdoptionRepository; 
-    } 
+    public RequestAdoptionController(RequestAdoptionRepository requestAdoptionRepository) {
+        this.requestAdoptionRepository = requestAdoptionRepository;
+    }
+
   
     //GetAll
     @GetMapping("/api/requestAdoptions")
@@ -55,20 +58,25 @@ public class RequestAdoptionController {
                 .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND)); 
     } 
   
-    @PostMapping("api/requestAdoptions")
-    public ResponseEntity<RequestAdoption> createRequestAdoption(
-            @RequestParam UUID userId,
-            @RequestParam UUID petId) {
+    @PostMapping("/api/requestAdoptions")
+    public ResponseEntity<RequestAdoption> createRequestAdoption(@RequestBody RequestAdoption requestAdoption) { 
+        RequestAdoption savedRequestAdoption = requestAdoptionRepository.save(requestAdoption); 
+        return new ResponseEntity<>(savedRequestAdoption, HttpStatus.CREATED); 
+    } 
+//     @PostMapping("/api/requestAdoptions")
+//     public ResponseEntity<RequestAdoption> createRequestAdoption(@RequestBody RequestAdoption request) {
 
-        RequestAdoption createdRequest = requestAdoptionServiceImpl.createRequestAdoption(userId, petId);
+//     MyUser myUser = request.getMyUser();
+//     Pet pet = request.getPet();
 
-        if (createdRequest != null) {
-            return ResponseEntity.ok(createdRequest);
-        } else {
-            return ResponseEntity.badRequest().build();
-        }
-    }
+//     RequestAdoption createdRequest = requestAdoptionServiceImpl.createRequestAdoption(myUser, pet);
 
+//     if (createdRequest != null) {
+//         return ResponseEntity.ok(createdRequest);
+//     } else {
+//         return ResponseEntity.badRequest().build();
+//     }
+// }
 }
 
 // @Service

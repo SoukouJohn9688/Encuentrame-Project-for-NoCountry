@@ -16,21 +16,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.encuentrame.project.encuentrame.entities.Article;
 import com.encuentrame.project.encuentrame.repositories.ArticleRepository;
+import com.encuentrame.project.encuentrame.services.ArticleServiceImpl;
 
 @RestController
 public class ArticleController {
 
     private final ArticleRepository articleRepository;
+    private final ArticleServiceImpl articleServiceImpl;
 
     @Autowired
-    public ArticleController(ArticleRepository articleRepository) { 
-        this.articleRepository = articleRepository; 
+    public ArticleController(ArticleRepository articleRepository, ArticleServiceImpl articleServiceImpl) { 
+        this.articleRepository = articleRepository;
+        this.articleServiceImpl = articleServiceImpl; 
     } 
   
     // Endpoint to retrieve all articles 
     @GetMapping("/api/articles")
     public ResponseEntity<List<Article>> getAllArticles() { 
-        List<Article> articles = articleRepository.findAll(); 
+        List<Article> articles = articleServiceImpl.getAllArticles();
         return new ResponseEntity<>(articles, HttpStatus.OK); 
     } 
   

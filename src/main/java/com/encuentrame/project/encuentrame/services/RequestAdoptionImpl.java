@@ -1,13 +1,18 @@
 package com.encuentrame.project.encuentrame.services;
 
+import com.encuentrame.project.encuentrame.entities.Article;
 import com.encuentrame.project.encuentrame.entities.MyUser;
 import com.encuentrame.project.encuentrame.entities.Pet;
 import com.encuentrame.project.encuentrame.entities.RequestAdoption;
 import com.encuentrame.project.encuentrame.enumerations.AdoptionStatus;
 import com.encuentrame.project.encuentrame.enumerations.HousingType;
+import com.encuentrame.project.encuentrame.repositories.MyUserRepository;
+import com.encuentrame.project.encuentrame.repositories.PetRepository;
 import com.encuentrame.project.encuentrame.repositories.RequestAdoptionRepository;
 import com.encuentrame.project.encuentrame.service.PetService;
 import com.encuentrame.project.encuentrame.service.RequestAdoptionService;
+
+import jakarta.persistence.Enumerated;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,28 +27,34 @@ import java.util.UUID;
 @Service
 @Transactional
 public class RequestAdoptionImpl implements RequestAdoptionService {
+    public RequestAdoptionImpl(RequestAdoptionRepository requestAdoptionRepository){
+        this.requestAdoptionRepository = requestAdoptionRepository;
+        this.petRepository = null;
+        this.myUserRepository = null;
+    }
+
+    @Autowired
+    private final PetRepository petRepository;
+
+    @Autowired
+    private final MyUserRepository myUserRepository;
 
     @Autowired
     private RequestAdoptionRepository requestAdoptionRepository;
 
-    @Autowired
-    private UserDetailsService userDetailsService;
 
-    @Autowired
-    private PetService petService;
-
-
-    public RequestAdoption createRequestAdoption(UUID userId, UUID petId) {
-        UserDetails user = userDetailsService.loadUserByUsername("username");
-        Optional<Pet> pet = petService.getPetById(petId);
-
+    public RequestAdoption createRequestAdoption(UUID userId, UUID petId, double Salary, HousingType housingType, boolean sterializationCommitment) {
+        MyUser myUser = myUserRepository.findById(userId).orElseThrow();
+        Pet pet = petRepository.findById(petId).orElseThrow();
         // Crear la solicitud de adopción
         RequestAdoption requestAdoption = new RequestAdoption();
         requestAdoption.setAdoptionStatus(AdoptionStatus.WAITING);
         requestAdoption.setCreationDate(LocalDateTime.now());
-        requestAdoption.setMyUser((MyUser) user); //Casteo
-        pet.ifPresent(requestAdoption::setPet);
-
+        requestAdoption.setSalary(Salary);
+        requestAdoption.setHousingType(housingType);
+        requestAdoption.setSterilizationCommitment(sterializationCommitment);
+        requestAdoption.setMyUser(myUser);
+        requestAdoption.setPet(pet);
         return requestAdoptionRepository.save(requestAdoption);
     }
 
