@@ -1,0 +1,120 @@
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 130px ;
+    padding-bottom: 10px;
+}
+
+form {
+    width: 450px;
+    height: 450px;
+    background: #FF731D;
+    color: #5d3891;
+    padding: 5px 20px;
+    border-radius: 15px;
+}
+
+form button:hover {
+    background-color: #E8E2E2;
+}
+
+/*texto ingresar*/
+
+.inputLogin input[type="Text"]::placeholder {
+    color: #E8E2E2;
+}
+
+.inputLogin input[type="password"]::placeholder {
+    color: #E8E2E2;
+}
+
+h1 {
+    font-size: 25px;
+    color: #E8E2E2;
+    text-align: center;
+    padding: 40px;
+}
+
+.inputLogin {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border: 2px solid #5d3891;
+    border-radius: 30px;
+    margin: 10px 0px;
+    align-items: center;
+
+}
+
+/*icono*/
+.inputLogin svg {
+    margin: 0 10px;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin: 10px 5px 10px 15px;
+}
+
+.inputLogin input {
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    color: #E8E2E2;
+    width: 100%;
+    outline: none;
+}
+
+/*olvide la contraseña y */
+form .contraseña{
+    text-decoration: none;
+    color: #E8E2E2;
+}
+
+/*boton iniciar sesion*/
+form button {
+    width: 100%;
+    height: 40px;
+    border: 0;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FF731D;
+    background: #5d3891;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+/*no tienes cuenta*/
+form p {
+    color: #E8E2E2;
+}
+
+
+/* no tienes cuenta y registrarse*/
+form div.registrarse{
+    margin: 20px 100px;
+    justify-content: space-around;
+    text-align: center;
+}
+
+form .reg {
+    color: #E8E2E2;
+}
+
+
+/*DISEÑO WEB ADAPTABLE*/
+
+
+@media screen and (min-width: 1700px) and (max-width: 1920px) {
+    section {
+        padding-top: 150px ;
+    }
+    
+    form {
+        width: 500px;
+        height: 500px;
+        padding: 20px 15px;    
+    }
+}
