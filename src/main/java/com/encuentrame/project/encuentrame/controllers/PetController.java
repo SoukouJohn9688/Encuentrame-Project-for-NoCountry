@@ -106,7 +106,7 @@ public class PetController {
         List<Pet> pets = petService.getAllPets();
         //Se debe anclar para ser enviado a la interfaz del usuario
         model.addAttribute("Mascotas", pets);
-        return "descripcion.html"; //Pendiente de crear Thymeleaf
+        return "adopciones.html"; //Pendiente de crear Thymeleaf
     }
     @GetMapping("/descripcionmascotas")
     public String displayDescription (ModelMap model){
