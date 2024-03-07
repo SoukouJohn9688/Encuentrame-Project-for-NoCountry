@@ -6,6 +6,7 @@ import com.encuentrame.project.encuentrame.entities.Image;
 import com.encuentrame.project.encuentrame.repositories.FileSystemRepository;
 import com.encuentrame.project.encuentrame.repositories.StorageRepository;
 import com.encuentrame.project.encuentrame.util.ImageUtils;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,6 +14,8 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Optional;
 
 @Service
@@ -23,7 +26,9 @@ public class StorageService {
     @Autowired
     private FileSystemRepository fileSystemRepository;
 
-    private final String FOLDER_PATH="H:/STUDYING/programming/Proyecto Encuentrame/c16-53-t-java/src/main/resources/static/img/";
+
+
+    private String uploadFolderPath=System.getProperty("user.dir")+"/src/main/resources/static/img/";
 
     public String uploadImage(MultipartFile file) throws IOException {
         Image imageData = repository.save(Image.builder()
@@ -46,11 +51,12 @@ public class StorageService {
 
 
     public String uploadImageToFileSystem(MultipartFile file) throws  Exception {
-        String filePath=FOLDER_PATH+file.getOriginalFilename();
-//        String filePath=FOLDER_PATH;
+        String fileName=file.getOriginalFilename();
+        String filePath=uploadFolderPath+fileName;
+
 
         FileSystem fileData=fileSystemRepository.save(FileSystem.builder()
-                .name(file.getOriginalFilename())
+                .name(fileName)
                 .type(file.getContentType())
                 .filePath(filePath).build());
 

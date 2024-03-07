@@ -27,5 +27,10 @@ Estoy batallando con el MyUser, lo estoy editando para crear algo sencillo que p
 Cree un GetAllUsers y un GetAllPets que creo que me servira para crear mi RequestAdoption CRUD. Podria evaluar eliminarse estas modificaciones de users y pets, tuve que hacer leves modificaciones en las entidades.
 
 Probablemente tenga que rehacer el CREATE del serviceIMPL si no logro adaptarlo, con ello el Controller tambien, creare un RestController que adaptare a controller luego cuando haya manera de manejar login y sesiones.
+Hecho
+---
+Puedo crear la RequestAdoption, falta capturar la ID de la sesion, que el template se genere como plantilla a partir de ser derivado de una mascota, Ahi Ajusto el formulario para que funcione el metodo.
+Correji el asunto de la creacion de imagen y mascota, falta manejar sus contingencias como que reemplaza una imagen previa con su mismo nombre y probablemente no sea facil de relacionarlo con las mascotas.
+
 
 
