@@ -12,6 +12,7 @@
 body{
     background-color: #5d3891;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
 }
 
 h1{
@@ -27,13 +28,13 @@ h1{
 
  .filter-button {
     position: fixed;
-    margin-left: auto;
-    background-color: rgb(1, 47, 111);
-    color: white;
+    right: 20px;
+    bottom: 20px;
+    background-color: #012f6f;
+    color: #ffffff;
     border-radius: 5px;
+    padding: 10px 20px;
     text-decoration: none;
-    line-height: 50px;
-    display: flex;
 }
 
  .filter-button i {
@@ -49,7 +50,7 @@ h1{
 .carousel-item img{
     max-height: 470px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 300px;
 }
 
 .carousel-control-prev{
@@ -66,8 +67,8 @@ h1{
 
 .imagen-texto{
     background-color: #FF731D;
-    color: white;
-    padding: 10px;
+    color: #E8E2E2;
+    padding: 25px;
     position: relative;
     border-radius: 10px 10px;
 }

@@ -7,12 +7,12 @@
     position: static;
     z-index: 100;
     border: 10px;
-    color: #5d3891;
+    color: #E8E2E2;
     background-color: #FF731D;
 }
 
 div.footer{
-    margin: 100px 10px 0px;
+    margin: 30px 10px 0px;
 }
 
 div.container{
@@ -25,7 +25,6 @@ div.container{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    flex-wrap: nowrap;
 }
 
 .logo-container-footer{

@@ -40,6 +40,7 @@
         
             <!-- La barra de navegación, con el logo, adopciones,refugios,etc -->
             <nav class="header" >
+                
                 <div class="logo-container">
                     <a href="/">
                         <img src="imagenes/logo1.png" alt="Logo Encuentrame">
@@ -48,16 +49,19 @@
                 
                 <ul class="nav-list">
 
-                    <li><a href="/creation">Adopciones</a></li>
-                    <li><a href="/mascotas">Mascotas</a></li>
-                    <li><a href="refugios">Refugios</a></li>
-                    <li><a href="adopcionespeciales">Adopción Especial</a></li>
-                    <li><a href="sobrenosotros">Sobre Nosotros</a></li>
+                    <li><a href="adopciones.html">Adopciones</a></li>
+                    <li><a href="eventos.html">Eventos</a></li>
+                    <li><a href="refugios.html">Refugios</a></li>
+                    <li><a href="adopcionespeciales.html">Adopción Especial</a></li>
+                    <li><a href="sobrenosotros.html">Sobre Nosotros</a></li>
+                    
                     <div class="botones-container">
-                        <a class="ingresarheader" th:href="@{/login}" >Ingresar</a>
-                        <a class="registrarseheader" th:href="@{/registrar}" >Registrarse</a>
+                        <a class="ingresarheader" href="ingresar.html" >Ingresar</a>
+                        <a class="registrarseheader" href="/registrarse" >Registrarse</a>
                     </div>
+
                 </ul>
+                
             </nav>
 
         <section>    
@@ -102,15 +106,23 @@
 
             <div class="descripción" th:object="${pet}" th:action="@{/descripcionmascotas}" method="post"  >
                 <article>
-                    <h2>Hola</h2>
+                  <!--<h2>Hola</h2>
                     <h3 > [[|Edad: ${age_months}|]], Tamaño: Grande, Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium error ipsum, placeat nam vero a porro odit sit alias nesciunt tenetur necessitatibus deserunt sunt temporibus in magnam consequatur sint molestiae!</h3>
-                    <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorum voluptas quo commodi, distinctio minima. Voluptas libero quo ratione quia esse consequuntur aspernatur, beatae, inventore minus, recusandae omnis dolore tempora.</h5>
+                   <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorum voluptas quo commodi, distinctio minima. Voluptas libero quo ratione quia esse consequuntur aspernatur, beatae, inventore minus, recusandae omnis dolore tempora.</h5>
+-->
+                    <!--Mostramos datos:-->
+                        <h2 th:text="${pet.get().breed}"></h2>
+                        <h3 th:text="${pet.get().age_months}"> [[|Edad: ${age_months}|]]</h3>
+                        <h3 th:text="${pet.get().size}"> Tamaño: Grande, Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium error ipsum, placeat nam vero a porro odit sit alias nesciunt tenetur necessitatibus deserunt sunt temporibus in magnam consequatur sint molestiae!</h3>
+                        <h5 th:text="${pet.get().description}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorum voluptas quo commodi, distinctio minima. Voluptas libero quo ratione quia esse consequuntur aspernatur, beatae, inventore minus, recusandae omnis dolore tempora.</h5>
+
                 </article>
-                <div class="contactar">
+
+
                     <div class="contactar">
                         <button type="button" id="botonContactar">Contactar para adopción</button>
-            
-                      
+                    </div>
+
                       <script>
                         // Obtén una referencia al botón
                         var boton = document.getElementById("botonContactar");

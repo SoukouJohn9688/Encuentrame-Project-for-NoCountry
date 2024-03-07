@@ -34,12 +34,12 @@ INSERT INTO `rescatame`.`events` (`address`, `city`, `content`, `date_time`, `ti
 ('Dirección del Evento 4', 'Ciudad 4', 'Contenido del Evento 4', '2024-02-24 17:15:00', 'Evento 4', 4),
 ('Dirección del Evento 5', 'Ciudad 5', 'Contenido del Evento 5', '2024-02-25 18:00:00', 'Evento 5', 5);
 
-INSERT INTO `rescatame`.`pet` (`adoptado`, `color`, `descripcion`, `edad_meses`, `raza`, `id_care_giver`) VALUES
-(0, 'Negro', 'Gatito juguetón', 6, 'Siamés', 'CG1'),
-(1, 'Blanco y Marrón', 'Perrito amigable', 12, 'Labrador', 'CG2'),
-(0, 'Gris', 'Gatito tranquilo', 8, 'Persa', 'CG3'),
-(1, 'Negro y Blanco', 'Perrito enérgico', 10, 'Beagle', 'CG4'),
-(0, 'Marrón', 'Gatito curioso', 7, 'Bengalí', 'CG5');
+INSERT INTO `rescatame`.`pet` (`adoptado`, `color`, `descripcion`, `edad_meses`, `raza`, `pet_id`) VALUES
+(0, 'Negro', 'Gatito juguetón', 6, 'Siamés', 'a4f94e9a-4d7b-4c3c-b0d5-09f49d71c523'),
+(1, 'Blanco y Marrón', 'Perrito amigable', 12, 'Labrador', '8e2bf6fd-7a15-492a-bc8d-3e0a8dcf7b90'),
+(0, 'Gris', 'Gatito tranquilo', 8, 'Persa', 'f1c15f9b-6bfc-45a8-8a9d-d91e6aeb13cf'),
+(1, 'Negro y Blanco', 'Perrito enérgico', 10, 'Beagle', '5d6a7f83-9f15-4e36-a3bf-8625f0a8a7d2'),
+(0, 'Marrón', 'Gatito curioso', 7, 'Bengalí', 'b0e2d4c1-98a7-4bfb-ba15-743f1e68a390');
 
 INSERT INTO `rescatame`.`request_adoptions` (`adoption_status`, `creation_date`, `user_id`, `pet_id`) VALUES
 ('WAITING', '2024-02-21 10:30:00', 1, 1),

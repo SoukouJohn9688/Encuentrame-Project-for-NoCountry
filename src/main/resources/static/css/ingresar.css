@@ -9,7 +9,7 @@ section {
 
 form {
     width: 450px;
-    height: 550px;
+    height: 450px;
     background: #FF731D;
     color: #5d3891;
     padding: 5px 20px;
@@ -17,13 +17,22 @@ form {
 }
 
 form button:hover {
-    background-color: #e22727c7;
+    background-color: #E8E2E2;
 }
 
 /*texto ingresar*/
+
+.inputLogin input[type="Text"]::placeholder {
+    color: #E8E2E2;
+}
+
+.inputLogin input[type="password"]::placeholder {
+    color: #E8E2E2;
+}
+
 h1 {
     font-size: 25px;
-    color: #5d3891;
+    color: #E8E2E2;
     text-align: center;
     padding: 40px;
 }
@@ -52,7 +61,7 @@ h1 {
     border: none;
     background: transparent;
     font-size: 15px;
-    color: #5d3891;
+    color: #E8E2E2;
     width: 100%;
     outline: none;
 }
@@ -91,14 +100,14 @@ form div.registrarse{
 }
 
 form .reg {
-    color: #5d3891;;
+    color: #E8E2E2;
 }
 
 
 /*DISEÑO WEB ADAPTABLE*/
 
 
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: 1700px) and (max-width: 1920px) {
     section {
         padding-top: 150px ;
     }
