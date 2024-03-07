@@ -4,6 +4,7 @@ import com.encuentrame.project.encuentrame.entities.Pet;
 import com.encuentrame.project.encuentrame.repositories.CareGiverRepository;
 import com.encuentrame.project.encuentrame.repositories.PetRepository;
 import com.encuentrame.project.encuentrame.service.PetService;
+import com.encuentrame.project.encuentrame.services.StorageService;
 import jakarta.validation.Valid;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +13,12 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.Clock;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.slf4j.Logger;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 @RequestMapping("/")
@@ -32,6 +35,9 @@ public class PetController {
     @Autowired
     private CareGiverRepository careGiverRepository;
 
+    @Autowired
+    private StorageService storageService;
+
     //Formulario de creación de animal
     /*@GetMapping("/creation")
     public String createPetForm(Model model) {
@@ -44,12 +50,44 @@ public class PetController {
         return "FormCreatePet.html";
     }
 
-    @PostMapping("/createAnimal")
-    public String createPet(Model model, @ModelAttribute("pet") Pet pet){
-        logger.debug("The request PET is " + pet);
+
+    @PostMapping("/createAnimalTest")
+    public String createPetTest(@RequestParam("image") MultipartFile file) {
+
+
+
+
+
         try{
+            String uploadImagePath = storageService.uploadImageToFileSystem(file);
+
+            logger.info("Saved in: " + uploadImagePath );
+
+
+            return ("index.html");
+
+        }catch(Exception exception){
+            logger.error("Error creating PET: " + exception.getMessage() + " cause: " + exception.getCause());
+            return ("FormCreatePet.html");
+        }
+    }
+
+    @PostMapping("/createAnimal")
+    public String createPet(Model model, @ModelAttribute("pet") Pet pet, @RequestParam("image") MultipartFile file) {
+
+
+
+        logger.debug("The request PET is " + pet);
+
+        try{
+            String uploadImagePath = storageService.uploadImageToFileSystem(file);
+            pet.setImage_url(uploadImagePath);
+            System.out.println(pet.getImage_url());
             Pet createdPet = petService.createPet(pet);
             logger.info("Created pet with ID: " + createdPet.getPet_id());
+
+            model.addAttribute("imagepath",uploadImagePath);
+
             return ("index.html");
 
         }catch(Exception exception){
