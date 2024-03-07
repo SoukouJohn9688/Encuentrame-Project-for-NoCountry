@@ -2,8 +2,10 @@ package com.encuentrame.project.encuentrame.controllers;
 
 
 import com.encuentrame.project.encuentrame.entities.MyUser;
+import com.encuentrame.project.encuentrame.entities.Pet;
 import com.encuentrame.project.encuentrame.services.MyUserServiceImpl;
 import jakarta.servlet.http.HttpSession;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -14,10 +16,14 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 import java.util.UUID;
+import org.slf4j.Logger;
 
 @Controller
 @RequestMapping("/")
 public class HomeController {
+
+    private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+
 
     private final MyUserServiceImpl myUserService;
 
@@ -47,8 +53,6 @@ public class HomeController {
     public String registrar() {
         return "registrarse.html";
     }
-
-
 
     @PostMapping("/registro")
     public String register(@RequestParam String name,
