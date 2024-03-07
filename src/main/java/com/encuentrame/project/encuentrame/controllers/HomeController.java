@@ -31,16 +31,9 @@ public class HomeController {
         return "index";
     }
 
-
-    @GetMapping("/mascotas")
-    public String getMascotas() {
-        return "adopciones";
-    }
-
-
     @GetMapping("/registrar")
     public String registrar() {
-        return "registrarse.html";
+        return "registrarse";
     }
 
 
@@ -70,7 +63,7 @@ public class HomeController {
             model.put("name", name);
             model.put("email", email);
 
-            return "registrarse.html";
+            return "registrarse";
         }
 
     }
@@ -97,7 +90,7 @@ public class HomeController {
             return "redirect:/admin/";
         }
 
-        return "inicio.html";
+        return "index";
     }
 
     @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN', 'ROLE_MODERATOR')")
@@ -126,5 +119,20 @@ public class HomeController {
 
             return "usuario_modificar.html";
         }
+    }
+
+    @GetMapping("/refugios")
+    public String refugios() {
+        return "refugios";
+    }
+
+    @GetMapping("/sobrenosotros")
+    public String sobrenosotros() {
+        return "sobrenosotros";
+    }
+
+    @GetMapping("/request")
+    public String request() {
+        return "request";
     }
 }

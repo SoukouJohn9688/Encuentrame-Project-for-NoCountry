@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.encuentrame.project.encuentrame.entities.Article;
 import com.encuentrame.project.encuentrame.entities.MyUser;
@@ -12,6 +13,10 @@ import com.encuentrame.project.encuentrame.repositories.ArticleRepository;
 import com.encuentrame.project.encuentrame.repositories.MyUserRepository;
 import com.encuentrame.project.encuentrame.service.ArticleService;
 
+import jakarta.transaction.Transactional;
+
+@Service
+@Transactional
 public class ArticleServiceImpl implements ArticleService{
     private final ArticleRepository articleRepository;
     private final MyUserRepository myUserRepository;

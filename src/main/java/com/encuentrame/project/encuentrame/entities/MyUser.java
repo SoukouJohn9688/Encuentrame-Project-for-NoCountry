@@ -1,6 +1,8 @@
 package com.encuentrame.project.encuentrame.entities;
 
 import com.encuentrame.project.encuentrame.enumerations.UserRole;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
@@ -24,10 +26,11 @@ public class MyUser {
     @Column(name = "user_id")
     private UUID user_id;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "myUser")
     private Set<RequestAdoption> requestAdoptions;
 
-    @OneToMany(mappedBy = "myUser")
+    @OneToMany(mappedBy = "myUser", fetch = FetchType.EAGER)
     private Set<Article> articles;
 
     @NotBlank(message = "The name cannot be blank.")

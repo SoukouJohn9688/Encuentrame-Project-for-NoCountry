@@ -1,6 +1,9 @@
 package com.encuentrame.project.encuentrame.entities;
 import com.encuentrame.project.encuentrame.enumerations.Size;
 import com.encuentrame.project.encuentrame.enumerations.Species;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -17,6 +20,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Pet {
     @Id
     @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
@@ -24,6 +28,7 @@ public class Pet {
     @Column(name = "pet_id", columnDefinition = "BINARY(16)")
     private UUID pet_id;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "pet")
     private Set<RequestAdoption> requestAdoptionSet;
 
