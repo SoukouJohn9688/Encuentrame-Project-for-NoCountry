@@ -23,7 +23,7 @@ public class StorageService {
     @Autowired
     private FileSystemRepository fileSystemRepository;
 
-    private final String FOLDER_PATH="H:/STUDYING/programming/Proyecto Encuentrame/c16-53-t-java/src/main/resources/static/img/";
+    private String uploadFolderPath="H:\\STUDYING\\programming\\Proyecto Encuentrame\\c16-53-t-java\\c16-53-t-java\\src\\main\\resources\\static\\img";
 
     public String uploadImage(MultipartFile file) throws IOException {
         Image imageData = repository.save(Image.builder()
@@ -46,7 +46,7 @@ public class StorageService {
 
 
     public String uploadImageToFileSystem(MultipartFile file) throws  Exception {
-        String filePath=FOLDER_PATH+file.getOriginalFilename();
+        String filePath=uploadFolderPath+File.separator+file.getOriginalFilename();
 //        String filePath=FOLDER_PATH;
 
         FileSystem fileData=fileSystemRepository.save(FileSystem.builder()
@@ -57,7 +57,7 @@ public class StorageService {
         file.transferTo(new File(filePath));
 
         if (fileData != null) {
-            return "Imagen guardada"+filePath;
+            return filePath;
         }
         return null;
     }
