@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             nombre: 'Lucas',
             ubicacion: 'No Country',
-            imagenSrc: '/static/img/gato1.jpg',
+            imagenSrc: 'img/patitas8.jpg',
         },
         {
             nombre: 'Gaston',

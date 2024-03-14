@@ -25,6 +25,7 @@ public class StorageService {
 
     private String uploadFolderPath="H:\\STUDYING\\programming\\Proyecto Encuentrame\\c16-53-t-java\\c16-53-t-java\\src\\main\\resources\\static\\img";
 
+    //private String uploadFolderPath=System.getProperty("user.dir")+"/src/main/resources/static/img/";
     public String uploadImage(MultipartFile file) throws IOException {
         Image imageData = repository.save(Image.builder()
                 .name(file.getOriginalFilename())
@@ -57,7 +58,7 @@ public class StorageService {
         file.transferTo(new File(filePath));
 
         if (fileData != null) {
-            return filePath;
+            return file.getOriginalFilename();
         }
         return null;
     }

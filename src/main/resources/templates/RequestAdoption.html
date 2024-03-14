@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="icon" id="logo" type="image/png" href="imagenes/logo1.png">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Agregué las bibliotecas y estilos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/2296f7e3a6.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <link href="https://db.onlinewebfonts.com/c/a96215c9d9ddf6f69b603c331081496e?family=ISOCTEUR+V1" rel="stylesheet" type="text/css"/>
+
+    <!-- Título de la página -->
+    <title>ENCUENTRAME</title>
+
+    <!-- Enlaces a las hojas de estilo propias -->
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <!--<link rel="stylesheet" href="/css/index.css">-->
+    <link rel="stylesheet" href="/css/registrarse.css">
+    <link rel="stylesheet" href="/css/request.css">
+    <!--<link rel="stylesheet" href="/css/ingresar.css">-->
+
+
+</head>
+
+<body>
+<div class="container-lg">
+
+    <!-- La barra de navegación, con el logo, adopciones,refugios,etc -->
+    <nav class="header">
+        <div class="logo-container">
+            <a href="/">
+                <img src="imagenes/logo1.png" alt="Logo Encuentrame">
+            </a>
+        </div>
+
+        <ul class="nav-list">
+
+            <li><a href="/adopciones">Adopciones</a></li>
+            <li><a href="/mascotas">Mascotas</a></li>
+            <li><a href="refugios">Refugios</a></li>
+            <li><a href="adopcionespeciales">Adopción Especial</a></li>
+            <li><a href="sobrenosotros">Sobre Nosotros</a></li>
+            <div class="botones-container">
+                <a class="ingresarheader" th:href="@{/login}">Ingresar</a>
+                <a class="registrarseheader" th:href="@{/registrar}">Registrarse</a>
+            </div>
+        </ul>
+    </nav>
+
+    <!-- <div class="formulario">
+         <div class="media">
+             <div class="media-body">
+                 <h5 class="mt-0 mb-1">Usted esta aplicando para la adopción de <strong>Manchitas</strong></h5>
+                 <img class="ml-3" src="img/perro1.jpg" alt="Generic placeholder image">
+                 Por favor, verifique que sus datos sean correctos y complete el formulario para iniciar el proceso de adopcion.
+                 <br>
+                 <div class="user-info">
+                     <br>
+                     <h6>Verificación de Datos para Adopción</h6>
+
+                     <p><strong>Nombre:</strong> Juan</p>
+                     <p><strong>Apellido:</strong> Pérez</p>
+                     <p><strong>Correo Electrónico:</strong> juan.perez@example.com</p>
+                 </div>
+             </div>
+         </div> -->
+
+
+    <!-- Formulario para crear una nueva solicitud -->
+    <div class="container">
+
+        <form th:object="${requestAdoption}" th:action="@{createRequestAdoption}" method="POST">
+            <h1>¡REGISTRA UNA SOLICITUD DE ADOPCIÓN!</h1>
+            <!--<label for="pet_name">Nombre:</label>
+            <input type="text" id="pet_name" name="pet_name" th:field="*{pet_name}" required/>-->
+
+            <div class="inputLogin">
+                <input  type="text"  name="userId" id="user_id" class="inputLogin" placeholder="User ID" autocomplete="off">
+            </div>
+
+            <div class="inputLogin">
+                <input  type="text"  name="petId" id="pet_id" class="inputLogin" placeholder="Pet ID" autocomplete="off">
+            </div>
+
+            <div class="form-group row">
+                <label for="salary" class="col-sm-2 col-form-label">Salario en doláres: </label>
+                <div class="col-sm-10">
+                    <input type="number" step="0.01" class="form-control" id="Salary" name="Salary"
+                           placeholder="Ingrese el salario en USD">
+                </div>
+            </div>
+
+            <br>
+            <fieldset class="form-group">
+                <div class="row">
+                    <legend class="col-form-label col-sm-8 pt-0">Compromiso de esterilizacion: </legend>
+                    <div class="col-sm-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sterilizationCommitment" id="gridRadios1"
+                                   value="option1" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                                Si
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="sterilizationCommitment" id="gridRadios2"
+                                   value="option2">
+                            <label class="form-check-label" for="gridRadios2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <br>
+
+            <fieldset class="form-group">
+                <div class="row">
+                    <legend class="col-form-label col-sm-8 pt-0">Tipo de vivienda: </legend>
+                    <div class="col-sm-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="housingType" id="gridRadios1"
+                                   value="CASA" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                                Casa
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="housingType" id="gridRadios2"
+                                   value="APARTAMENTO">
+                            <label class="form-check-label" for="gridRadios2">
+                                Apartamento
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="housingType" id="gridRadios2"
+                                   value="FINCA">
+                            <label class="form-check-label" for="gridRadios2">
+                                Finca
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <br>
+
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                        <label class="form-check-label" for="gridCheck1">
+                            Acepto el compromiso y he sido honesto"
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <button type="submit" class="btn btn-primary send">Enviar solicitud</button>
+                </div>
+            </div>
+        </form>
+
+
+
+         <footer>
+             <div class="footer">
+                 <div class="container">
+                     <div class="logo-container-footer">
+                         <img src="img/logo1.png" alt="logo patitas">
+                     </div>
+                     <div class="derechos">
+                         <p>&copy; ENCUENTRAME - Todos los derechos reservados</p>
+                     </div>
+                     <div class="contact-container">
+                         <h4>Contacto</h4>
+                         <p>Correo: nocountry@gmail.com</p>
+                         <p>Teléfono: (342) 155119142</p>
+                     </div>
+                     <div class="social-icons">
+                         <ul>
+                             <li><a href="#" target="_blank"><i class="fa-brands fa-instagram fa-flip fa-2xl"></i></a>
+                             </li>
+                             <li><a href="#" target="_blank"><i class="fa-brands fa-x-twitter fa-flip fa-2xl"></i></a>
+                             </li>
+                             <li><a href="#" target="_blank"><i class="fa-brands fa-facebook fa-flip fa-2xl"></i></a>
+                             </li>
+                         </ul>
+                     </div>
+                 </div>
+             </div>
+         </footer>
+     </div>
+     <!-- <script src="js/index.js"></script> -->
+</body>
+
+</html>

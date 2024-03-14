@@ -48,19 +48,29 @@
     </nav>
 
 
+
     <h1></h1>
         <a href="#" class="filter-button">
             <i class='bx bx-filter-alt'></i>
         </a>
-        
-    <div class="mosaic" id="mosaic-container">
+
         
     </div>
 
     <div class="d-flex justify-content-center mt-3">
-        <form th:action="@{/listarMascota}" method="get">
-            <button type="submit" class="btn btn-primary mx-2">Lista de Mascotas</button>
-        </form>
+
+        <div class="mosaic">
+        <div th:each="pet : ${Mascotas}" class="mosaic-container">
+         <img th:src="@{'/img/'+ ${pet.image_name}}" alt="Mascota" class=" mosaic-item" />
+
+            <div class="imagen-texto">
+                <h3>Nombre: [[${pet.pet_name}]]</h3>
+                <p> Raza: [[${pet.breed}]]</p>
+            </div>
+        </div>
+
+
+    </div>
 
         <form th:action="@{/creation}" method=get >
             <button type="submit" class="btn btn-secondary mx-2">Crear Mascota</button>
@@ -93,7 +103,7 @@
     </footer>
 
     
-    <script src="js/adopciones.js"></script>
+<!--    <script src="js/adopciones.js"></script>-->
 
 </body>
 </html> 

@@ -9,7 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     padding-top: 150px;
-    
+
 }
 
 .media {
@@ -124,8 +124,8 @@ form .registrarse{
     align-items: center;
     flex-wrap: nowrap;
     gap: 10px;*/
-    
-    
+
+
 }
 .btn.btn-primary.send{
     position: absolute;

@@ -84,7 +84,8 @@ public class PetController {
 
         try{
             String uploadImagePath = storageService.uploadImageToFileSystem(file);
-            pet.setImage_url(uploadImagePath);
+//            pet.setImage_url(uploadImagePath);
+            pet.setImage_name(uploadImagePath);
             System.out.println(pet.getImage_url());
             Pet createdPet = petService.createPet(pet);
             logger.info("Created pet with ID: " + createdPet.getPet_id());
@@ -106,8 +107,15 @@ public class PetController {
         List<Pet> pets = petService.getAllPets();
         //Se debe anclar para ser enviado a la interfaz del usuario
         model.addAttribute("Mascotas", pets);
+        return "adopciones_listar.html"; //Pendiente de crear Thymeleaf
+    }
+
+    @GetMapping("/opcionesListar")
+    public String displayOptions (ModelMap model){
+
         return "adopciones.html"; //Pendiente de crear Thymeleaf
     }
+
     @GetMapping("/descripcionmascotas")
     public String displayDescription (ModelMap model){
 

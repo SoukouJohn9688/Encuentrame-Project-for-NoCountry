@@ -54,6 +54,7 @@ public class Pet {
 
     private String color;
     private String image_url;
+    private String image_name;
 
     @Enumerated(EnumType.STRING)
     private Size size;
